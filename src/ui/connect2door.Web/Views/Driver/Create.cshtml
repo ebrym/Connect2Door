@@ -1,0 +1,57 @@
+﻿@model connect2door.Web.Models.DriverModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card mb-4">
+    <!-- Card header -->
+    <div class="card-header">
+        <h3 class="mb-0">Add Driver</h3>
+    </div>
+    <!-- Card body -->
+    <div class="card-body">
+        <!-- Form groups used in grid -->
+        <div class="row">
+            <div class="col-md-10">
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group row">
+                        <label asp-for="FirstName" class="col-md-2 col-form-label form-control-label">First Name</label>
+                        <div class="col-md-4">
+                            <input asp-for="FirstName" class="form-control" type="text" placeholder="Enter First Name">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="LastName" class="col-md-2 col-form-label form-control-label">Last Name</label>
+                        <div class="col-md-4">
+                            <input asp-for="LastName" class="form-control" type="text" placeholder="Enter Last Name">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="VehiclePlate" class="col-md-2 col-form-label form-control-label">Vehicle Plate</label>
+                        <div class="col-md-4">
+                            <input asp-for="VehiclePlate" class="form-control" type="text" placeholder="Enter Vehicle Plate">
+                            <span asp-validation-for="VehiclePlate" class="text-danger"></span>
+                        </div>
+                        <label asp-for="StartDate" class="col-md-2 col-form-label form-control-label">Start Date</label>
+                        <div class="col-md-4">
+                            <input asp-for="StartDate" class="form-control" type="Date" placeholder="Enter StartDate">
+                            <span asp-validation-for="StartDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                     <div class="form-group row">                     
+                        <label asp-for="ExpirationDate" class="col-md-2 col-form-label form-control-label">Expiration </label>
+                        <div class="col-md-4">
+                            <input asp-for="ExpirationDate" class="form-control" type="Date" placeholder="Enter Expiration Date">
+                            <span asp-validation-for="ExpirationDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary my-4">Add Driver</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

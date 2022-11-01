@@ -1,0 +1,120 @@
+﻿@model IEnumerable<connect2door.Web.Models.ShipmentViewModel>
+
+<div class="card">
+    <!-- Card header -->
+    <div class="card-header border-0">
+        <div class="row">
+            <div class="col-6">
+                <h3 class="mb-0">Shipment</h3>
+            </div>
+            <div class="col-6 text-right">
+            
+                    <a asp-action="Create" class="btn btn-sm btn-default btn-round btn-icon" data-toggle="tooltip" data-original-title="Create Shipment">
+                        <span class="btn-inner--icon"><i class="fas fa-user-edit"></i></span>
+                        <span class="btn-inner--text">Create Shipment</span>
+                    </a>
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Light table -->
+    <div class="table-responsive">
+        <table id="table"  class="table align-items-center table-flush">
+            <thead class="thead-light">
+                <tr>
+                    <th>S/N</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Status</th>
+                    <th>Shipment Date</th>
+                    <th>Driver</th>
+                    <th>Effective Date</th>
+                    <th>Barcode</th>
+                    <th>Comments</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int i = 0;
+                }
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@(i = i + 1)</td>
+                    <td class="table-user">
+                        <b>@Html.DisplayFor(modelItem => item.Origin)</b>
+                    </td>
+                     <td class="table-user">
+                        <b>@Html.DisplayFor(modelItem => item.Destination)</b>
+                    </td>
+                     <td class="table-user">
+                        <b>@item.Status.ToString()</b>
+                    </td>
+                     <td class="table-user">
+                        <b>@Html.DisplayFor(modelItem => item.ShipmentDate)</b>
+                    </td>
+                     <td class="table-user">
+                        <b>@Html.DisplayFor(modelItem => item.Driver)</b>
+                    </td>
+                      <td class="table-user">
+                        <b>@Html.DisplayFor(modelItem => item.EffectiveDate)</b>
+                    </td>
+                     <td class="table-user">
+                        <b>@Html.DisplayFor(modelItem => item.Barcode)</b>
+                    </td>
+                     <td class="table-user">
+                        <b>@Html.DisplayFor(modelItem => item.Comments)</b>
+                    </td>
+                     <td class="table-user">
+                        <b>@Html.DisplayFor(modelItem => item.CreatedAt)</b>
+                    </td>
+                     <td class="table-user">
+                        <b>@Html.DisplayFor(modelItem => item.UpdatedAt)</b>
+                    </td>
+                    <td>
+                        <a id="details" class='btn border changeStatus' data-id="@item.Id">
+                         <span class="badge badge-sm bg-gradient-success">Change Status</span>
+                        </a>
+
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="table-action" data-toggle="tooltip" data-original-title="Edit Shipment">
+                            <i class="fas fa-user-edit"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete Shipment">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <!-- Details Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Change Shipment Status</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End: Details Modal-->
+</div>
+
+

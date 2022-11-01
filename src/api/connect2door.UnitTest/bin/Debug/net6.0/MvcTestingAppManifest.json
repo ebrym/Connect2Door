@@ -1,0 +1,5 @@
+{
+  "connect2door.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/ibrahim.abdullahi\/RiderProjects\/connect2door\/src\/api\/connect2door.Api",
+  "connect2door.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/ibrahim.abdullahi\/RiderProjects\/connect2door\/src\/api\/connect2door.Data",
+  "connect2door.Repository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/ibrahim.abdullahi\/RiderProjects\/connect2door\/src\/api\/connect2door.Repository"
+}

@@ -1,0 +1,78 @@
+﻿@model connect2door.Web.Models.ShipmentModel
+
+@{
+    ViewData["Title"] = "Shipment";
+}
+
+<div class="card mb-4">
+    <!-- Card header -->
+    <div class="card-header">
+        <h3 class="mb-0">Add</h3>
+    </div>
+    <!-- Card body -->
+    <div class="card-body">
+        <!-- Form groups used in grid -->
+        <div class="row">
+            <div class="col-md-10">
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group row">
+                        <label asp-for="Origin" class="col-md-2 col-form-label form-control-label">Origin</label>
+                        <div class="col-md-4">
+                            <input asp-for="Origin" class="form-control" type="text" placeholder="Enter Origin">
+                            <span asp-validation-for="Origin" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Destination" class="col-md-2 col-form-label form-control-label">Destination</label>
+                        <div class="col-md-4">
+                            <input asp-for="Destination" class="form-control" type="text" placeholder="Enter Destination">
+                            <span asp-validation-for="Destination" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="DriverId" class="col-md-2 col-form-label form-control-label">Driver</label>
+                        <div class="col-md-4">
+                            <select asp-for="DriverId" asp-items="@ViewBag.driver"
+                                    class="form-control custom-select">
+                                <option value="">Please select one</option>
+                            </select>
+                            <span asp-validation-for="DriverId" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Barcode" class="col-md-2 col-form-label form-control-label">Barcode</label>
+                        <div class="col-md-4">
+                            <input asp-for="Barcode" class="form-control" type="Test" placeholder="Enter Barcode">
+                            <span asp-validation-for="Barcode" class="text-danger"></span>
+                        </div>
+                    </div>
+                     <div class="form-group row">                           
+                        <label asp-for="ShipmentDate" class="col-md-2 col-form-label form-control-label">Start Date</label>
+                        <div class="col-md-4">
+                            <input asp-for="ShipmentDate" class="form-control" type="Date" placeholder="Enter StartDate">
+                            <span asp-validation-for="ShipmentDate" class="text-danger"></span>
+                        </div>
+                        <label asp-for="EffectiveDate" class="col-md-2 col-form-label form-control-label">Effective Date</label>
+                        <div class="col-md-4">
+                            <input asp-for="EffectiveDate" class="form-control" type="Date" placeholder="Enter Effective Date">
+                            <span asp-validation-for="EffectiveDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                     <div class="form-group row">  
+                         <label asp-for="PlannedDate" class="col-md-2 col-form-label form-control-label">Planned Date</label>
+                        <div class="col-md-4">
+                            <input asp-for="PlannedDate" class="form-control" type="Date" placeholder="Enter Planned Date">
+                            <span asp-validation-for="PlannedDate" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Comments" class="col-md-2 col-form-label form-control-label">Comments</label>
+                        <div class="col-md-4">
+                            <textarea asp-for="Comments" class="form-control" rows="5" placeholder="Enter Comments"></textarea>
+                            <span asp-validation-for="Comments" class="text-danger"></span>
+                        </div>
+                        
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary my-4">Add Shipment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,208 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Api/connect2door.Api.csproj": {}
+  },
+  "projects": {
+    "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Api/connect2door.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Api/connect2door.Api.csproj",
+        "projectName": "connect2door.Api",
+        "projectPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Api/connect2door.Api.csproj",
+        "packagesPath": "/Users/ibrahim.abdullahi/.nuget/packages/",
+        "outputPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ibrahim.abdullahi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Repository/connect2door.Repository.csproj": {
+                "projectPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Repository/connect2door.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[13.16.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/ibrahim.abdullahi/.dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Data/connect2door.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Data/connect2door.Data.csproj",
+        "projectName": "connect2door.Data",
+        "projectPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Data/connect2door.Data.csproj",
+        "packagesPath": "/Users/ibrahim.abdullahi/.nuget/packages/",
+        "outputPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Data/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ibrahim.abdullahi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/ibrahim.abdullahi/.dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Repository/connect2door.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Repository/connect2door.Repository.csproj",
+        "projectName": "connect2door.Repository",
+        "projectPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Repository/connect2door.Repository.csproj",
+        "packagesPath": "/Users/ibrahim.abdullahi/.nuget/packages/",
+        "outputPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Repository/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ibrahim.abdullahi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Data/connect2door.Data.csproj": {
+                "projectPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/api/connect2door.Data/connect2door.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/ibrahim.abdullahi/.dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

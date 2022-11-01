@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "d6esJywv+82HVjbmLdSF+AkAqBy56XXg8V65BQZ4DnY=",
+  "Source": "connect2door.Api",
+  "BasePath": "_content/connect2door.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

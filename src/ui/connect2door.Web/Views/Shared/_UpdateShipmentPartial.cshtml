@@ -1,0 +1,37 @@
+  @model connect2door.Web.Models.ShipmentViewModel
+ 
+
+<!-- updateStatusModal Modal -->
+<div class="card mb-4">
+<div class="card-body">
+        <!-- Form groups used in grid -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="content">
+                        <form asp-action="UpdateStatus" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label form-control-label">Status</label>
+                                <div class="col-md-7">
+                                    <select asp-for="Status"
+                                                    class="form-control custom-select" required="">
+                                                <option value="">Select a Status</option>
+                                                <option value=1>Pickup</option>
+                                                <option value=2>Delivered</option>
+                                                <option value=3>Returned</option>
+                                            </select>
+                                </div>
+                            </div>
+                            <input type="hidden" asp-for="Id" />
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary my-4">Update Shipment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+ </div>
+ </div>
+<!-- End: updateStatusModal Modal-->
