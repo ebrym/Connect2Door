@@ -1,0 +1,4588 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Application</name>
+    </assembly>
+    <members>
+        <member name="T:Application.BackgroundService.NotificationWorkerService">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:Microsoft.Extensions.Hosting.IHostedService" />
+        </member>
+        <member name="M:Application.BackgroundService.NotificationWorkerService.#ctor(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory,Microsoft.Extensions.Logging.ILogger{Application.BackgroundService.NotificationWorkerService})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.BackgroundService.NotificationWorkerService"/> class.
+            </summary>
+        </member>
+        <member name="M:Application.BackgroundService.NotificationWorkerService.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Triggered when the application host is ready to start the service.
+            </summary>
+            <param name="cancellationToken">Indicates that the start process has been aborted.</param>
+        </member>
+        <member name="M:Application.BackgroundService.NotificationWorkerService.SendEmailAsync(System.Threading.CancellationToken)">
+            <summary>
+            Sends the email asynchronous.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+        </member>
+        <member name="M:Application.BackgroundService.NotificationWorkerService.SmtpMail_SendCompleted(System.Object,System.ComponentModel.AsyncCompletedEventArgs)">
+            <summary>
+            Smtps the mail_ send completed.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The e.</param>
+        </member>
+        <member name="M:Application.BackgroundService.NotificationWorkerService.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Triggered when the application host is performing a graceful shutdown.
+            </summary>
+            <param name="cancellationToken">Indicates that the shutdown process should no longer be graceful.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.BackgroundService.NotificationWorkerService.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Application.Common.Behaviors.AuditTrail`2">
+            <summary>
+            The pipeline for audit trail.
+            </summary>
+        </member>
+        <member name="M:Application.Common.Behaviors.AuditTrail`2.Process(`0,`1,System.Threading.CancellationToken)">
+            <summary>
+            Process method executes after the Handle method on your handler
+            </summary>
+            <param name="request">Request instance</param>
+            <param name="response">Response instance</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            An await-able task
+            </returns>
+        </member>
+        <member name="T:Application.Common.Exceptions.AppException">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Application.Common.Exceptions.AppException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Common.Exceptions.AppException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Application.Common.Exceptions.AppException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Common.Exceptions.AppException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (<see langword="Nothing" /> in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="T:Application.Common.Extension.Extensions">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Common.Extension.Extensions.ToDecimal(System.Object)">
+            <summary>
+            Converts to decimal.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.Common.Extension.Extensions.ToDate(System.Object)">
+            <summary>
+            Converts to date.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.Common.Extension.Extensions.ToInt(System.Object)">
+            <summary>
+            Converts the string representation of a number to an integer.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Application.Common.Validation.RequestValidation`2">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Common.Validation.RequestValidation`2.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.IValidator{`0}})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Common.Validation.RequestValidation`2"/> class.
+            </summary>
+            <param name="validators">The validators.</param>
+        </member>
+        <member name="M:Application.Common.Validation.RequestValidation`2.Handle(`0,System.Threading.CancellationToken,MediatR.RequestHandlerDelegate{`1})">
+            <summary>
+            Pipeline handler. Perform any additional behavior and await the <paramref name="next" /> delegate as necessary
+            </summary>
+            <param name="request">Incoming request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <param name="next">Awaitable delegate for the next action in the pipeline. Eventually this delegate represents the handler.</param>
+            <returns>
+            Awaitable task returning the <typeparamref name="TResponse" />
+            </returns>
+        </member>
+        <member name="T:Application.DependencyInjection">
+            <summary>
+            Register Dependency for application layer
+            </summary>
+        </member>
+        <member name="M:Application.DependencyInjection.AddApplication(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Extension method to register application dependency
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Application.Features.AuthenticationFeatures.Commands.AuthenticateCommandHandler">
+             <summary>
+            
+             </summary>
+             <seealso>
+             <cref>MediatR.IRequestHandler{Application.Request.User.AuthenticateRequest, (System.Boolean Succeed, System.String Message, System.Object user)}</cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Commands.AuthenticateCommandHandler.#ctor(Microsoft.AspNetCore.Identity.UserManager{Domain.User.User},Microsoft.AspNetCore.Identity.SignInManager{Domain.User.User},Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.AuthenticationFeatures.Commands.AuthenticateCommandHandler"/> class.
+            </summary>
+            <param name="userManager">The user manager.</param>
+            <param name="signInManager">The sign in manager.</param>
+            <param name="applicationDbContext"></param>
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Commands.AuthenticateCommandHandler.Handle(Application.Request.User.AuthenticateRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.AuthenticationFeatures.Commands.CreateUserCommandHandler">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>
+                     MediatR.IRequestHandler{Application.Request.User.CreateUserRequest, (System.Boolean succeed, System.String
+                     message, Application.Response.User.CreateUserResponse response)}
+                 </cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Commands.CreateUserCommandHandler.#ctor(Microsoft.AspNetCore.Identity.UserManager{Domain.User.User},Microsoft.AspNetCore.Identity.RoleManager{Domain.User.Role},Application.Interfaces.IApplicationDbContext,MediatR.IMediator,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.AuthenticationFeatures.Commands.CreateUserCommandHandler"/> class.
+            </summary>
+            <param name="userManager">The user manager.</param>
+            <param name="roleManager">The role manager.</param>
+            <param name="applicationDbContext"></param>
+            <param name="mediator"></param>
+            <param name="contextAccessor"></param>
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Commands.CreateUserCommandHandler.Handle(Application.Request.User.CreateUserRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.AuthenticationFeatures.Commands.DeleteUserCommand">
+             <summary>
+            
+             </summary>
+             <seealso cref="!:MediatR.IRequest&lt;(System.Boolean succeed, System.String message)&gt;" />
+        </member>
+        <member name="P:Application.Features.AuthenticationFeatures.Commands.DeleteUserCommand.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:Application.Features.AuthenticationFeatures.Commands.DeleteUserCommand.DeleteUserCommandHandler">
+            <summary>
+            
+            </summary>
+            <seealso>
+                <cref>MediatR.IRequestHandler{Commands.DeleteUserCommand, (System.Boolean succeed, System.String message)}</cref>
+            </seealso>
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Commands.DeleteUserCommand.DeleteUserCommandHandler.#ctor(Microsoft.AspNetCore.Identity.UserManager{Domain.User.User})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.AuthenticationFeatures.Commands.DeleteUserCommand.DeleteUserCommandHandler"/> class.
+            </summary>
+            <param name="userManager">The user manager.</param>
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Commands.DeleteUserCommand.DeleteUserCommandHandler.Handle(Application.Features.AuthenticationFeatures.Commands.DeleteUserCommand,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.AuthenticationFeatures.Commands.EditUserCommandHandler">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>
+                     MediatR.IRequestHandler{Application.Request.User.EditUserRequest, (System.Boolean succeed, System.String
+                     message, Application.Response.User.EditUserResponse response)}
+                 </cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Commands.EditUserCommandHandler.#ctor(Microsoft.AspNetCore.Identity.UserManager{Domain.User.User},Microsoft.AspNetCore.Identity.RoleManager{Domain.User.Role},Application.Interfaces.IApplicationDbContext,MediatR.IMediator,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.AuthenticationFeatures.Commands.EditUserCommandHandler"/> class.
+            </summary>
+            <param name="userManager">The user manager.</param>
+            <param name="roleManager">The role manager.</param>
+            <param name="applicationDbContext"></param>
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Commands.EditUserCommandHandler.Handle(Application.Request.User.EditUserRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.AuthenticationFeatures.Commands.ResetPasswordCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Application.Features.AuthenticationFeatures.Commands.ResetPasswordCommand.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="T:Application.Features.AuthenticationFeatures.Commands.ResetPasswordCommandHandler">
+            <summary>
+            
+            </summary>
+            <seealso cref="!:bool.String message)&gt;" />
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Commands.ResetPasswordCommandHandler.#ctor(Microsoft.AspNetCore.Identity.UserManager{Domain.User.User},MediatR.IMediator,Microsoft.Extensions.Logging.ILogger{Application.Features.AuthenticationFeatures.Commands.ResetPasswordCommandHandler})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.AuthenticationFeatures.Commands.ResetPasswordCommandHandler"/> class.
+            </summary>
+            <param name="userManager">The user manager.</param>
+            <param name="mediator"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Commands.ResetPasswordCommandHandler.Handle(Application.Features.AuthenticationFeatures.Commands.ResetPasswordCommand,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.AuthenticationFeatures.Query.GetUsersQueryHandler">
+             <summary>
+            
+             </summary>
+             <seealso cref="!:MediatR.IRequestHandler&lt;GetUsersRequest, CreateUserResponse[]&gt;" />
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Query.GetUsersQueryHandler.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            
+            </summary>
+            <param name="applicationDbContext"></param>
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Query.GetUsersQueryHandler.Handle(Application.Request.User.GetUsersRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.AuthenticationFeatures.Validations.CreateUserValidation">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>FluentValidation.AbstractValidator{Application.Request.User.CreateUserRequest}</cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.AuthenticationFeatures.Validations.CreateUserValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.AuthenticationFeatures.Validations.CreateUserValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateCompanyCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateCompanyCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper,MediatR.IMediator,Application.Interfaces.IUploadService)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+             <param name="mediator"></param>
+             <param name="uploadService"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateCompanyCommand.Handle(Application.Request.Company.CreateCompanyRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateCompanyValidation">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>FluentValidation.AbstractValidator{Application.Request.Unit.CreateUnitRequest}</cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateCompanyValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Commands.CreateCompanyValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.DeleteCompanyCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteCompanyCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteCompanyCommand.Handle(Application.Request.Company.DeleteCompanyRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.UpdateCompanyCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateCompanyCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateCompanyCommand.Handle(Application.Request.Company.UpdateCompanyRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.UploadCompanyCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UploadCompanyCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper,MediatR.IMediator,Application.Interfaces.IUploadService)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UploadCompanyCommand.Handle(Application.Request.Company.UpdateCompanyRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateLocalGovernmentCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateLocalGovernmentCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateLocalGovernmentCommand.Handle(Application.Request.LocalGovernment.CreateLocalGovernmentRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateLocalGovernmentValidation">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>FluentValidation.AbstractValidator{Application.Request.Unit.CreateUnitRequest}</cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateLocalGovernmentValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Commands.CreateLocalGovernmentValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.DeleteLocalGovernmentCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteLocalGovernmentCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteLocalGovernmentCommand.Handle(Application.Request.LocalGovernment.DeleteLocalGovernmentRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.UpdateLocalGovernmentCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateLocalGovernmentCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateLocalGovernmentCommand.Handle(Application.Request.LocalGovernment.UpdateLocalGovernmentRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetAllCompanyQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllCompanyQuery.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="!:GetAllUnitQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllCompanyQuery.Handle(Application.Request.Company.GetAllCompanyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetCompanyByIdQuerry">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetCompanyByIdQuerry.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="!:GetUnitByIdQuerry"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetCompanyByIdQuerry.Handle(Application.Request.Company.GetCompanyByIdRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetAllLocalGovernmentQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllLocalGovernmentQuery.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="!:GetAllUnitQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllLocalGovernmentQuery.Handle(Application.Request.LocalGovernment.GetAllLocalGovernmentRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetLocalGovernmentByIdQuerry">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetLocalGovernmentByIdQuerry.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="!:GetUnitByIdQuerry"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetLocalGovernmentByIdQuerry.Handle(Application.Request.LocalGovernment.GetLocalGovernmentByIdRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.EmployeeFeature.Commands.CreateEmployeeCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Commands.CreateEmployeeCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper,MediatR.IMediator,Microsoft.AspNetCore.Identity.UserManager{Domain.User.User},Microsoft.AspNetCore.Identity.RoleManager{Domain.User.Role},Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+             <param name="mediator"></param>
+             <param name="userManager"></param>
+             <param name="roleManager"></param>
+             <param name="contextAccessor"></param>
+             <param name="WorkflowApprovalSettings"></param>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Commands.CreateEmployeeCommand.Handle(Application.Request.Employee.CreateEmployeeRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.EmployeeFeature.Commands.CreateEmployeeValidation">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Commands.CreateEmployeeValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.EmployeeFeature.Commands.CreateEmployeeValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.EmployeeFeature.Commands.UpdateEmployeeValidation">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Commands.UpdateEmployeeValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.EmployeeFeature.Commands.UpdateEmployeeValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.EmployeeFeature.Commands.DeleteEmployeeCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Commands.DeleteEmployeeCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Commands.DeleteEmployeeCommand.Handle(Application.Request.Employee.DeleteEmployeeRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.EmployeeFeature.Commands.UpdateEmployeeCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Commands.UpdateEmployeeCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Commands.UpdateEmployeeCommand.Handle(Application.Request.Employee.UpdateEmployeeRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.EmployeeFeature.Queries.GetAllEmployeeQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Queries.GetAllEmployeeQuery.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.EmployeeFeature.Queries.GetAllEmployeeQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Queries.GetAllEmployeeQuery.Handle(Application.Request.Employee.GetAllEmployeeRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.EmployeeFeature.Queries.GetEmployeeByIdQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Queries.GetEmployeeByIdQuery.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.EmployeeFeature.Queries.GetEmployeeByIdQuery"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:Application.Features.EmployeeFeature.Queries.GetEmployeeByIdQuery.Handle(Application.Request.Employee.GetEmployeeByIdRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.FileUploadFeature.Command.FileUploadCommandHandler">
+             <summary>
+            
+             </summary>
+             <seealso cref="!:MediatR.IRequestHandler&lt;FileUploadRequest, (bool succeed, string message)&gt;" />
+        </member>
+        <member name="M:Application.Features.FileUploadFeature.Command.FileUploadCommandHandler.#ctor(Application.Interfaces.IUploadService,Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.FileUploadFeature.Command.FileUploadCommandHandler"/> class.
+            </summary>
+            <param name="uploadService">The upload service.</param>
+            <param name="applicationDbContext">The application database context.</param>
+        </member>
+        <member name="M:Application.Features.FileUploadFeature.Command.FileUploadCommandHandler.Handle(Application.Request.FileUpload.FileUploadRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.FileUploadFeature.Command.FileUploadValidation">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:FluentValidation.AbstractValidator`1" />
+        </member>
+        <member name="M:Application.Features.FileUploadFeature.Command.FileUploadValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.FileUploadFeature.Command.FileUploadValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.FileUploadFeature.Query.GetUploadedFileByIdHandler">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:MediatR.IRequestHandler`2" />
+        </member>
+        <member name="M:Application.Features.FileUploadFeature.Query.GetUploadedFileByIdHandler.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.FileUploadFeature.Query.GetUploadedFileByIdHandler"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+        </member>
+        <member name="M:Application.Features.FileUploadFeature.Query.GetUploadedFileByIdHandler.Handle(Application.Request.FileUpload.GetFileUploadedByIdRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.FileUploadFeature.Query.GetUploadedFileHandler">
+             <summary>
+            
+             </summary>
+             <seealso cref="!:IRequestHandler&lt;GetUploadedFileRequest, (bool succeed, string message, GetUploadedFileResponse[] file)&gt;" />
+        </member>
+        <member name="M:Application.Features.FileUploadFeature.Query.GetUploadedFileHandler.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.FileUploadFeature.Query.GetUploadedFileHandler"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+        </member>
+        <member name="M:Application.Features.FileUploadFeature.Query.GetUploadedFileHandler.Handle(Application.Request.FileUpload.GetUploadedFileRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.ItemTypeFeatures.Commands.CreateItemTypeCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.ItemTypeFeatures.Commands.CreateItemTypeCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.ItemTypeFeatures.Commands.CreateItemTypeCommand.Handle(Application.Request.ItemType.CreateItemTypeRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.ItemTypeFeatures.Commands.CreateItemTypeValidation">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.ItemTypeFeatures.Commands.CreateItemTypeValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.ItemTypeFeatures.Commands.CreateItemTypeValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.ItemTypeFeatures.Commands.UpdateItemTypeValidation">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>FluentValidation.AbstractValidator{Application.Request.ItemType.UpdateItemTypeRequest}</cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.ItemTypeFeatures.Commands.UpdateItemTypeValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.ItemTypeFeatures.Commands.UpdateItemTypeValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.ItemTypeFeatures.Commands.UpdateItemTypeCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.ItemTypeFeatures.Commands.UpdateItemTypeCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.ItemTypeFeatures.Commands.UpdateItemTypeCommand.Handle(Application.Request.ItemType.UpdateItemTypeRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.ItemTypeFeatures.Queries.GetAllItemTypeQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.ItemTypeFeatures.Queries.GetAllItemTypeQuery.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.ItemTypeFeatures.Queries.GetAllItemTypeQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.ItemTypeFeatures.Queries.GetAllItemTypeQuery.Handle(Application.Request.ItemType.GetAllItemTypeRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.ItemTypeFeatures.Queries.GetItemTypeByIdQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.ItemTypeFeatures.Queries.GetItemTypeByIdQuery.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.ItemTypeFeatures.Queries.GetItemTypeByIdQuery"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:Application.Features.ItemTypeFeatures.Queries.GetItemTypeByIdQuery.Handle(Application.Request.ItemType.GetItemTypeByIdRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.NotificationReceiverFeatures.Commands.CreateNotificationReceiverCommand">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>
+                     MediatR.IRequestHandler{Application.Request.NotificationReceiver.CreateNotificationReceiverRequest, (System.Boolean Succeed,
+                     System.String Message, Application.Response.NotificationReceiver.CreateNotificationReceiverResponse Response)}
+                 </cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.NotificationReceiverFeatures.Commands.CreateNotificationReceiverCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.NotificationReceiverFeatures.Commands.CreateNotificationReceiverCommand.Handle(Application.Request.NotificationReceiver.CreateNotificationReceiverRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.NotificationReceiverFeatures.Commands.CreateNotificationReceiverValidation">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.NotificationReceiverFeatures.Commands.CreateNotificationReceiverValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.NotificationReceiverFeatures.Commands.CreateNotificationReceiverValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.NotificationReceiverFeatures.Commands.DeleteNotificationReceiverCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.NotificationReceiverFeatures.Commands.DeleteNotificationReceiverCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.NotificationReceiverFeatures.Commands.DeleteNotificationReceiverCommand.Handle(Application.Request.NotificationReceiver.DeleteNotificationReceiverRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.NotificationReceiverFeatures.Commands.UpdateNotificationReceiverCommand">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>
+                     MediatR.IRequestHandler{Application.Request.NotificationReceiver.UpdateNotificationReceiverRequest, (System.Boolean Succeed,
+                     System.String Message, Application.Response.NotificationReceiver.UpdateNotificationReceiverResponse Response)}
+                 </cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.NotificationReceiverFeatures.Commands.UpdateNotificationReceiverCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.NotificationReceiverFeatures.Commands.UpdateNotificationReceiverCommand.Handle(Application.Request.NotificationReceiver.UpdateNotificationReceiverRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.NotificationReceiverFeatures.Queries.GetAllNotificationReceiverQuery">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>
+                     MediatR.IRequestHandler{Application.Request.NotificationReceiver.GetAllNotificationReceiverRequest,
+                     System.Collections.Generic.List{Application.Response.NotificationReceiver.GetAllNotificationReceiverResponse}}
+                 </cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.NotificationReceiverFeatures.Queries.GetAllNotificationReceiverQuery.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.NotificationReceiverFeatures.Queries.GetAllNotificationReceiverQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Application.Features.NotificationReceiverFeatures.Queries.GetAllNotificationReceiverQuery.Handle(Application.Request.NotificationReceiver.GetAllNotificationReceiverRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.NotificationReceiverFeatures.Queries.GetNotificationReceiverByIdQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.NotificationReceiverFeatures.Queries.GetNotificationReceiverByIdQuery.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.NotificationReceiverFeatures.Queries.GetNotificationReceiverByIdQuery"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:Application.Features.NotificationReceiverFeatures.Queries.GetNotificationReceiverByIdQuery.Handle(Application.Request.NotificationReceiver.GetNotificationReceiverByIdRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.RoleFeatures.Commands.CreateRoleCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.RoleFeatures.Commands.CreateRoleCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper,Microsoft.AspNetCore.Identity.RoleManager{Domain.User.Role})">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+             <param name="roleManager"></param>
+        </member>
+        <member name="M:Application.Features.RoleFeatures.Commands.CreateRoleCommand.Handle(Application.Request.Role.CreateRoleRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.RoleFeatures.Commands.CreateRoleValidation">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>FluentValidation.AbstractValidator{Application.Request.Role.CreateRoleRequest}</cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.RoleFeatures.Commands.CreateRoleValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.RoleFeatures.Commands.CreateRoleValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.RoleFeatures.Commands.DeleteRoleCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.RoleFeatures.Commands.DeleteRoleCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper,Microsoft.AspNetCore.Identity.RoleManager{Domain.User.Role},Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+             <param name="roleManager"></param>
+        </member>
+        <member name="M:Application.Features.RoleFeatures.Commands.DeleteRoleCommand.Handle(Application.Request.Role.DeleteRoleRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.RoleFeatures.Queries.GetAllRoleQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.RoleFeatures.Queries.GetAllRoleQuery.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper,Microsoft.AspNetCore.Identity.RoleManager{Domain.User.Role})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.RoleFeatures.Queries.GetAllRoleQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Application.Features.RoleFeatures.Queries.GetAllRoleQuery.Handle(Application.Request.Role.GetAllRoleRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.RoleFeatures.Queries.GetRoleByIdQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.RoleFeatures.Queries.GetRoleByIdQuery.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper,Microsoft.AspNetCore.Identity.RoleManager{Domain.User.Role})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.RoleFeatures.Queries.GetRoleByIdQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Application.Features.RoleFeatures.Queries.GetRoleByIdQuery.Handle(Application.Request.Role.GetRoleByIdRequest,System.Threading.CancellationToken)">
+             <summary>
+             Handles a request
+             </summary>
+             <param name="request">The request</param>
+             <param name="cancellationToken">Cancellation token</param>
+             <returns>
+             Response from the request
+             </returns>
+            
+        </member>
+        <member name="T:Application.Features.ServiceTypeFeature.Commands.CreateServiceTypeCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Commands.CreateServiceTypeCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Commands.CreateServiceTypeCommand.Handle(Application.Request.ServiceType.CreateServiceTypeRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.ServiceTypeFeature.Commands.CreateServiceTypeValidation">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Commands.CreateServiceTypeValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.ServiceTypeFeature.Commands.CreateServiceTypeValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.ServiceTypeFeature.Commands.UpdateServiceTypeValidation">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>FluentValidation.AbstractValidator{Application.Request.ServiceType.UpdateServiceTypeRequest}</cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Commands.UpdateServiceTypeValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.ServiceTypeFeature.Commands.UpdateServiceTypeValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.ServiceTypeFeature.Commands.DeleteServiceTypeCommand">
+             <summary>
+            
+             </summary>
+             <seealso cref="!:MediatR.IRequest&lt;(System.Boolean succeed, System.String message)&gt;" />
+        </member>
+        <member name="P:Application.Features.ServiceTypeFeature.Commands.DeleteServiceTypeCommand.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:Application.Features.ServiceTypeFeature.Commands.DeleteServiceTypeCommand.DeleteServiceTypeCommandHandler">
+             <summary>
+            
+             </summary>
+             <seealso cref="!:MediatR.IRequestHandler&lt;Application.Features.ServiceTypeFeature.Commands.DeleteServiceTypeCommand, (System.Boolean succeed, System.String message)&gt;" />
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Commands.DeleteServiceTypeCommand.DeleteServiceTypeCommandHandler.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.ServiceTypeFeature.Commands.DeleteServiceTypeCommand.DeleteServiceTypeCommandHandler"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Commands.DeleteServiceTypeCommand.DeleteServiceTypeCommandHandler.Handle(Application.Features.ServiceTypeFeature.Commands.DeleteServiceTypeCommand,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.ServiceTypeFeature.Commands.UpdateServiceTypeCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Commands.UpdateServiceTypeCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Commands.UpdateServiceTypeCommand.Handle(Application.Request.ServiceType.UpdateServiceTypeRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.ServiceTypeFeature.Queries.GetAllServiceTypeQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Queries.GetAllServiceTypeQuery.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.ServiceTypeFeature.Queries.GetAllServiceTypeQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Queries.GetAllServiceTypeQuery.Handle(Application.Request.ServiceType.GetAllServiceTypeRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.ServiceTypeFeature.Queries.GetServiceTypeByIdQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Queries.GetServiceTypeByIdQuery.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.ServiceTypeFeature.Queries.GetServiceTypeByIdQuery"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:Application.Features.ServiceTypeFeature.Queries.GetServiceTypeByIdQuery.Handle(Application.Request.ServiceType.GetServiceTypeByIdRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.FeaturesNotification.NotificationGenerators.GenerateEmail">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationGenerators.GenerateEmail.#ctor(Application.Interfaces.IApplicationDbContext,MediatR.IMediator,Microsoft.AspNetCore.Identity.RoleManager{Domain.User.Role},Microsoft.Extensions.Options.IOptionsSnapshot{Application.FeaturesNotification.Utilities.AssetURLS},Microsoft.AspNetCore.Identity.UserManager{Domain.User.User})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.FeaturesNotification.NotificationGenerators.GenerateEmail"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mediator">The mediator.</param>
+            <param name="roleManager">The role manager.</param>
+            <param name="assetUrls">The asset urls.</param>
+            <param name="userManager">The user manager.</param>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationGenerators.GenerateEmail.GetUsersToNotifyAsync(Domain.Entities.NotificationReceiver,Application.FeaturesNotification.Notifications.NotificationMessage)">
+            <summary>
+            Gets the users to notify asynchronous.
+            </summary>
+            <param name="notificationReceivers">The notification receivers.</param>
+            <param name="notification">The notification.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationGenerators.GenerateEmail.GenerateUserDetails(Application.FeaturesNotification.Notifications.NotificationMessage,System.String)">
+            <summary>
+            Generates the user details.
+            </summary>
+            <param name="notification">The notification.</param>
+            <param name="template">The template.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationGenerators.GenerateEmail.GenerateEmployeeDetails(Application.FeaturesNotification.Notifications.NotificationMessage,System.String)">
+            <summary>
+            Generates the employee details.
+            </summary>
+            <param name="notification">The notification.</param>
+            <param name="template">The template.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationGenerators.GenerateEmail.GenerateInitiatorDetails(Domain.User.User,System.DateTimeOffset,System.String)">
+            <summary>
+            Generates the initiator details.
+            </summary>
+            <param name="initiator">The initiator.</param>
+            <param name="initiatedDate">The initiated date.</param>
+            <param name="template">The template.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationGenerators.GenerateEmail.GenerateViewLink(Application.FeaturesNotification.Notifications.NotificationMessage,System.String,System.String,System.String)">
+            <summary>
+            Generates the view link.
+            </summary>
+            <param name="notification">The notification.</param>
+            <param name="template">The template.</param>
+            <param name="link">The link.</param>
+            <param name="linkText">The link text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationGenerators.GenerateEmail.GenerateRecipientDetailsAndSave(Application.FeaturesNotification.Notifications.NotificationMessage,System.String)">
+            <summary>
+            Generates the recipient details and save.
+            </summary>
+            <param name="notification">The notification.</param>
+            <param name="template">The template.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationGenerators.GenerateEmail.GenerateInitiatorDetailsAndSave(Application.FeaturesNotification.Notifications.NotificationMessage,System.String,Domain.User.User)">
+            <summary>
+            Generates the initiator details and save.
+            </summary>
+            <param name="notification">The notification.</param>
+            <param name="template">The template.</param>
+            <param name="initiator">The initiator.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationGenerators.GenerateEmail.GenerateConcernedRecipientDetailsAndSave(Application.FeaturesNotification.Notifications.NotificationMessage,System.String,System.Collections.Generic.List{Domain.User.User})">
+            <summary>
+            Generates the concerned recipient details and save.
+            </summary>
+            <param name="notification">The notification.</param>
+            <param name="template">The template.</param>
+            <param name="users">The users.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationGenerators.GenerateEmail.UserCreated(Application.FeaturesNotification.Notifications.NotificationMessage)">
+            <summary>
+            Users the created.
+            </summary>
+            <param name="notification">The notification.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Application.FeaturesNotification.NotificationHandlers.ConfigurationActionsNotificationMessageHandler">
+            <summary>
+            
+            </summary>
+            <seealso>
+                <cref>MediatR.INotificationHandler{Application.FeaturesNotification.Notifications.NotificationMessage}</cref>
+            </seealso>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationHandlers.ConfigurationActionsNotificationMessageHandler.#ctor(Application.Interfaces.IApplicationDbContext,MediatR.IMediator,Microsoft.AspNetCore.Identity.RoleManager{Domain.User.Role},Microsoft.Extensions.Options.IOptionsSnapshot{Application.FeaturesNotification.Utilities.AssetURLS},Microsoft.AspNetCore.Identity.UserManager{Domain.User.User})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.FeaturesNotification.NotificationHandlers.ConfigurationActionsNotificationMessageHandler"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mediator">The mediator.</param>
+            <param name="roleManager">The role manager.</param>
+            <param name="assetUrls">The asset urls.</param>
+            <param name="userManager">The user manager.</param>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationHandlers.ConfigurationActionsNotificationMessageHandler.Handle(Application.FeaturesNotification.Notifications.NotificationMessage,System.Threading.CancellationToken)">
+            <summary>
+            Handles a notification
+            </summary>
+            <param name="notification">The notification</param>
+            <param name="cancellationToken">Cancellation token</param>
+        </member>
+        <member name="T:Application.FeaturesNotification.NotificationHandlers.PasswordResetNotificationHandler">
+            <summary>
+            
+            </summary>
+            <seealso>
+                <cref>MediatR.INotificationHandler{Application.FeaturesNotification.Notifications.NotificationMessage}</cref>
+            </seealso>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationHandlers.PasswordResetNotificationHandler.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.FeaturesNotification.NotificationHandlers.PasswordResetNotificationHandler"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationHandlers.PasswordResetNotificationHandler.Handle(Application.FeaturesNotification.Notifications.NotificationMessage,System.Threading.CancellationToken)">
+            <summary>
+            Handles a notification
+            </summary>
+            <param name="notification">The notification</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="T:Application.FeaturesNotification.NotificationHandlers.UserActionsNotificationMessageHandler">
+            <summary>
+            
+            </summary>
+            <seealso>
+                <cref>MediatR.INotificationHandler{Application.FeaturesNotification.Notifications.NotificationMessage}</cref>
+            </seealso>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationHandlers.UserActionsNotificationMessageHandler.#ctor(Application.Interfaces.IApplicationDbContext,MediatR.IMediator,Microsoft.AspNetCore.Identity.RoleManager{Domain.User.Role},Microsoft.Extensions.Options.IOptionsSnapshot{Application.FeaturesNotification.Utilities.AssetURLS},Microsoft.AspNetCore.Identity.UserManager{Domain.User.User})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.FeaturesNotification.NotificationHandlers.UserActionsNotificationMessageHandler"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mediator">The mediator.</param>
+            <param name="roleManager">The role manager.</param>
+            <param name="assetURLS">The asset urls.</param>
+            <param name="userManager">The user manager.</param>
+        </member>
+        <member name="M:Application.FeaturesNotification.NotificationHandlers.UserActionsNotificationMessageHandler.Handle(Application.FeaturesNotification.Notifications.NotificationMessage,System.Threading.CancellationToken)">
+            <summary>
+            Handles a notification
+            </summary>
+            <param name="notification">The notification</param>
+            <param name="cancellationToken">Cancellation token</param>
+        </member>
+        <member name="T:Application.FeaturesNotification.Notifications.NotificationMessage">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:MediatR.INotification" />
+        </member>
+        <member name="M:Application.FeaturesNotification.Notifications.NotificationMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.FeaturesNotification.Notifications.NotificationMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Application.FeaturesNotification.Notifications.NotificationMessage.MainEntity">
+            <summary>
+            Gets or sets the main entity.
+            </summary>
+            <value>
+            The main entity.
+            </value>
+        </member>
+        <member name="P:Application.FeaturesNotification.Notifications.NotificationMessage.SubEntity">
+            <summary>
+            Gets or sets the sub entity.
+            </summary>
+            <value>
+            The sub entity.
+            </value>
+        </member>
+        <member name="P:Application.FeaturesNotification.Notifications.NotificationMessage.DisbursementEntity">
+            <summary>
+            Gets or sets the disbursement entity.
+            </summary>
+            <value>
+            The disbursement entity.
+            </value>
+        </member>
+        <member name="P:Application.FeaturesNotification.Notifications.NotificationMessage.User">
+            <summary>
+            Gets or sets the user.
+            </summary>
+            <value>
+            The user.
+            </value>
+        </member>
+        <member name="P:Application.FeaturesNotification.Notifications.NotificationMessage.NewUserPassword">
+            <summary>
+            Creates new userpassword.
+            </summary>
+            <value>
+            The new user password.
+            </value>
+        </member>
+        <member name="P:Application.FeaturesNotification.Notifications.NotificationMessage.NewUserRoles">
+            <summary>
+            Creates new userroles.
+            </summary>
+            <value>
+            The new user roles.
+            </value>
+        </member>
+        <member name="P:Application.FeaturesNotification.Notifications.NotificationMessage.WorkflowItemId">
+            <summary>
+            Gets or sets the workflow item identifier.
+            </summary>
+            <value>
+            The workflow item identifier.
+            </value>
+        </member>
+        <member name="P:Application.FeaturesNotification.Notifications.NotificationMessage.NotificationType">
+            <summary>
+            Gets or sets the type of the notification.
+            </summary>
+            <value>
+            The type of the notification.
+            </value>
+        </member>
+        <member name="P:Application.FeaturesNotification.Notifications.NotificationMessage.NotificationActionType">
+            <summary>
+            Gets or sets the type of the notification action.
+            </summary>
+            <value>
+            The type of the notification action.
+            </value>
+        </member>
+        <member name="P:Application.FeaturesNotification.Notifications.NotificationMessage.NoMoreApproval">
+            <summary>
+            Gets or sets a value indicating whether [no more approval].
+            </summary>
+            <value>
+              <c>true</c> if [no more approval]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Application.Interfaces.IApplicationDbContext">
+            <summary>
+            Application Db Context implemented in Persistence layer
+            </summary>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.CompanySettings">
+            <summary>
+            Gets or sets the company settings.
+            </summary>
+            <value>
+            The company settings.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.Employees">
+            <summary>
+            Gets or sets the employees.
+            </summary>
+            <value>
+            The employees.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.UnitOfMeasurements">
+            <summary>
+            Gets or sets the unit of measurements.
+            </summary>
+            <value>
+            The unit of measurements.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.ServiceTypes">
+            <summary>
+            Gets or sets the ServiceType.
+            </summary>
+            <value>
+            The ServiceType.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.ItemTypes">
+            <summary>
+            Gets or sets the ItemType.
+            </summary>
+            <value>
+            The ItemType.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.Counters">
+            <summary>
+            Gets or sets the counters.
+            </summary>
+            <value>
+            The counters.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.Settings">
+            <summary>
+            Gets or sets the settings.
+            </summary>
+            <value>
+            The settings.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.FileUploads">
+            <summary>
+            Gets or sets the file uploads.
+            </summary>
+            <value>
+            The file uploads.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.Reasons">
+            <summary>
+            Gets or sets the reasons.
+            </summary>
+            <value>
+            The reasons.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.Units">
+            <summary>
+            Gets or sets the units.
+            </summary>
+            <value>
+            The units.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.Countries">
+            <summary>
+            Gets or sets the countries.
+            </summary>
+            <value>
+            The countries.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.Companies">
+            <summary>
+            Gets or sets the companies.
+            </summary>
+            <value>
+            The companies.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.States">
+            <summary>
+            Gets or sets the states.
+            </summary>
+            <value>
+            The states.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.LocalGovernments">
+            <summary>
+            Gets or sets the LocalGovernment.
+            </summary>
+            <value>
+            The LocalGovernment.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.NotificationMessages">
+            <summary>
+            Gets or sets the NotificationMessages.
+            </summary>
+            <value>
+            The NotificationMessages.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.NotificationMessageTemplates">
+            <summary>
+            Gets or sets the NotificationMessageTemplate.
+            </summary>
+            <value>
+            The NotificationMessageTemplate.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.NotificationReceivers">
+            <summary>
+            Gets or sets the NotificationReceivers.
+            </summary>
+            <value>
+            The NotificationReceivers.
+            </value>
+        </member>
+        <member name="M:Application.Interfaces.IApplicationDbContext.SaveChangesAsync(System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="cancellation"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Application.Interfaces.IApplicationDbContext.SaveChangesAsync">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.MailConfigurations">
+            <summary>
+            Gets or sets the mail configurations.
+            </summary>
+            <value>
+            The mail configurations.
+            </value>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.Users">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.Roles">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Application.Interfaces.IApplicationDbContext.UserRoles">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Application.Interfaces.IBarcodeGeneratorService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Interfaces.IBarcodeGeneratorService.GenerateBarCode(System.String)">
+            <summary>
+            Generates the bar code.
+            </summary>
+            <param name="code">The code.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Application.Interfaces.IExcelService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Interfaces.IExcelService.GetDataTableFromExcel(System.String,System.Boolean)">
+            <summary>
+            Gets the data table from excel.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="hasHeader">if set to <c>true</c> [has header].</param>
+            <returns></returns>
+        </member>
+        <member name="T:Application.Interfaces.IGeneratorService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Interfaces.IGeneratorService.GenerateAssetId">
+            <summary>
+            Generates the asset identifier.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application.Interfaces.IGeneratorService.GenerateId(System.String)">
+            <summary>
+            Generates the identifier.
+            </summary>
+            <param name="v">The v.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Application.Interfaces.IMapFrom`1">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Application.Interfaces.IMapFrom`1.Mapping(AutoMapper.Profile)">
+            <summary>
+            Mappings the specified profile.
+            </summary>
+            <param name="profile">The profile.</param>
+        </member>
+        <member name="T:Application.Interfaces.IQrCodeGeneratorService">
+            <summary>
+            Generate QR Code
+            </summary>
+        </member>
+        <member name="M:Application.Interfaces.IQrCodeGeneratorService.GenerateQrCode(System.String)">
+            <summary>
+            Generates the qr code.
+            </summary>
+            <param name="code">The code.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Application.Interfaces.IUploadService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Interfaces.IUploadService.UploadToServer(Microsoft.AspNetCore.Http.IFormFile,System.String)">
+            <summary>
+            Uploads to server.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="folder">The folder.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Application.Interfaces.IUploadService.UploadAsBase64String(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Uploads as base64 string.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Application.Mapping.MappingProfile">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:AutoMapper.Profile" />
+        </member>
+        <member name="M:Application.Mapping.MappingProfile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Mapping.MappingProfile"/> class.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.Company.CreateCompanyRequest" -->
+        <member name="P:Application.Request.Company.CreateCompanyRequest.Name">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Request.Company.CreateCompanyRequest.Website">
+            <summary>
+            Gets or sets the website.
+            </summary>
+            <value>
+            The website.
+            </value>
+        </member>
+        <member name="P:Application.Request.Company.CreateCompanyRequest.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:Application.Request.Company.CreateCompanyRequest.Address">
+            <summary>
+            Gets or sets the address.
+            </summary>
+            <value>
+            The address.
+            </value>
+        </member>
+        <member name="P:Application.Request.Company.CreateCompanyRequest.UploadLogo">
+            <summary>
+            Gets or sets the logo.
+            </summary>
+            <value>
+            The logo.
+            </value>
+        </member>
+        <member name="P:Application.Request.Company.CreateCompanyRequest.UploadBanner">
+            <summary>
+            Gets or sets the banner.
+            </summary>
+            <value>
+            The banner.
+            </value>
+        </member>
+        <member name="P:Application.Request.Company.CreateCompanyRequest.CountryId">
+            <summary>
+            Gets or sets the country identifier.
+            </summary>
+            <value>
+            The country identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Company.CreateCompanyRequest.StateId">
+            <summary>
+            Gets or sets the state identifier.
+            </summary>
+            <value>
+            The state identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Company.CreateCompanyRequest.Logo">
+            <summary>
+            Gets or sets the logo.
+            </summary>
+            <value>
+            The logo.
+            </value>
+        </member>
+        <member name="P:Application.Request.Company.CreateCompanyRequest.Banner">
+            <summary>
+            Gets or sets the banner.
+            </summary>
+            <value>
+            The banner.
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.Company.DeleteCompanyRequest" -->
+        <member name="P:Application.Request.Company.DeleteCompanyRequest.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.Company.GetAllCompanyRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Request.Company.GetCompanyByIdRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Request.Company.UploadCompanyFileRequest.Id">
+            <summary>
+            Gets or sets the comapny identifier.
+            </summary>
+            <value>
+            The company identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Company.UploadCompanyFileRequest.FormFile">
+            <summary>
+            Gets or sets the form file.
+            </summary>
+            <value>
+            The form file.
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.Country.CreateCountryRequest" -->
+        <member name="P:Application.Request.Country.CreateCountryRequest.Name">
+             <summary>
+            
+             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.Country.DeleteCountryRequest" -->
+        <member name="P:Application.Request.Country.DeleteCountryRequest.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.Country.GetAllCountryRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Request.Country.GetCountryByIdRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Request.Employee.CreateEmployeeRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>
+            The first name.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>
+            The last name.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.StaffId">
+            <summary>
+            Gets or sets the staff identifier.
+            </summary>
+            <value>
+            The staff identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.MinistryId">
+            <summary>
+            Gets or sets the ministry identifier.
+            </summary>
+            <value>
+            The ministry identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.DepartmentId">
+            <summary>
+            Gets or sets the department identifier.
+            </summary>
+            <value>
+            The department identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.Designation">
+            <summary>
+            Gets or sets the designation.
+            </summary>
+            <value>
+            The designation.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.PhoneNo">
+            <summary>
+            Gets or sets the phone no.
+            </summary>
+            <value>
+            The phone no.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.Address">
+            <summary>
+            Gets or sets the address.
+            </summary>
+            <value>
+            The address.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.Picture">
+            <summary>
+            Gets or sets the picture.
+            </summary>
+            <value>
+            The picture.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.UnitId">
+            <summary>
+            Gets or sets the UnitId identifier.
+            </summary>
+            <value>
+            The UnitId identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.UserId">
+            <summary>
+            Gets or sets the user identifier.
+            </summary>
+            <value>
+            The user identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.CountryId">
+            <summary>
+            Gets or sets the country identifier.
+            </summary>
+            <value>
+            The country identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.StateId">
+            <summary>
+            Gets or sets the state identifier.
+            </summary>
+            <value>
+            The state identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.CreateEmployeeRequest.LocalGovernmentId">
+            <summary>
+            Gets or sets the local government identifier.
+            </summary>
+            <value>
+            The local government identifier.
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.Employee.DeleteEmployeeRequest" -->
+        <member name="P:Application.Request.Employee.DeleteEmployeeRequest.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.Employee.GetAllEmployeeRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.Employee.GetEmployeeByIdRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Request.Employee.GetEmployeeByIdRequest.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.Employee.UpdateEmployeeRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>
+            The first name.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>
+            The last name.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.StaffId">
+            <summary>
+            Gets or sets the staff identifier.
+            </summary>
+            <value>
+            The staff identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.MinistryId">
+            <summary>
+            Gets or sets the ministry identifier.
+            </summary>
+            <value>
+            The ministry identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.DepartmentId">
+            <summary>
+            Gets or sets the department identifier.
+            </summary>
+            <value>
+            The department identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.Designation">
+            <summary>
+            Gets or sets the designation.
+            </summary>
+            <value>
+            The designation.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.PhoneNo">
+            <summary>
+            Gets or sets the phone no.
+            </summary>
+            <value>
+            The phone no.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.Address">
+            <summary>
+            Gets or sets the address.
+            </summary>
+            <value>
+            The address.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.Picture">
+            <summary>
+            Gets or sets the picture.
+            </summary>
+            <value>
+            The picture.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.UnitId">
+            <summary>
+            Gets or sets the UnitId identifier.
+            </summary>
+            <value>
+            The UnitId identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.UserId">
+            <summary>
+            Gets or sets the user identifier.
+            </summary>
+            <value>
+            The user identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Employee.UpdateEmployeeRequest.Status">
+            <summary>
+            Gets or sets the user Status.
+            </summary>
+            <value>
+            The user Status.
+            </value>
+        </member>
+        <member name="T:Application.Request.FileUpload.FileUploadRequest">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <cref>
+             MediatR.IRequest{(System.Boolean succeed, System.String message)}
+             </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Request.FileUpload.FileUploadRequest.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Request.FileUpload.FileUploadRequest.EntityType">
+            <summary>
+            Gets or sets the type of the entity.
+            </summary>
+            <value>
+            The type of the entity.
+            </value>
+        </member>
+        <member name="P:Application.Request.FileUpload.FileUploadRequest.EntityId">
+            <summary>
+            Gets or sets the entity identifier.
+            </summary>
+            <value>
+            The entity identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.FileUpload.FileUploadRequest.FormFile">
+            <summary>
+            Gets or sets the form file.
+            </summary>
+            <value>
+            The form file.
+            </value>
+        </member>
+        <member name="T:Application.Request.FileUpload.GetFileUploadedByIdRequest">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:MediatR.IRequest`1" />
+        </member>
+        <member name="P:Application.Request.FileUpload.GetFileUploadedByIdRequest.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:Application.Request.FileUpload.GetUploadedFileRequest">
+             <summary>
+            
+             </summary>
+             <seealso cref="!:IRequest&lt;(bool succeed, string message, GetUploadedFileResponse[] file)&gt;" />
+        </member>
+        <member name="P:Application.Request.FileUpload.GetUploadedFileRequest.EntityId">
+            <summary>
+            Gets or sets the entity identifier.
+            </summary>
+            <value>
+            The entity identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.FileUpload.GetUploadedFileRequest.EntityType">
+            <summary>
+            Gets or sets the type of the entity.
+            </summary>
+            <value>
+            The type of the entity.
+            </value>
+        </member>
+        <member name="T:Application.Request.ItemType.CreateItemTypeRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Request.ItemType.CreateItemTypeRequest.ItemTypeName">
+            <summary>
+            ItemType
+            </summary>
+            <value>
+            The Item Type Name
+            </value>
+        </member>
+        <member name="T:Application.Request.ItemType.GetAllItemTypeRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.ItemType.GetItemTypeByIdRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Request.ItemType.GetItemTypeByIdRequest.Id">
+            <summary>
+            Id
+            </summary>
+            <value>
+            The Id
+            </value>
+        </member>
+        <member name="T:Application.Request.ItemType.UpdateItemTypeRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Request.ItemType.UpdateItemTypeRequest.Id">
+            <summary>
+            Id
+            </summary>
+            <value>
+            The Item Type Id
+            </value>
+        </member>
+        <member name="P:Application.Request.ItemType.UpdateItemTypeRequest.ItemTypeName">
+            <summary>
+            ItemType
+            </summary>
+            <value>
+            The Item Type Name
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Application.Request.ItemType.UpdateItemTypeRequest.Status" -->
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.LocalGovernment.CreateLocalGovernmentRequest" -->
+        <member name="P:Application.Request.LocalGovernment.CreateLocalGovernmentRequest.Name">
+             <summary>
+            
+             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.LocalGovernment.DeleteLocalGovernmentRequest" -->
+        <member name="P:Application.Request.LocalGovernment.DeleteLocalGovernmentRequest.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.LocalGovernment.GetAllLocalGovernmentRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Request.LocalGovernment.GetLocalGovernmentByIdRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Request.LocalGovernment.UpdateLocalGovernmentRequest.StateId">
+            <summary>
+            Gets or sets the StateId.
+            </summary>
+            <value>
+            The StateId.
+            </value>
+        </member>
+        <member name="T:Application.Request.NotificationReceiver.CreateNotificationReceiverRequest">
+            <summary>
+            1.Name (unique)
+            2.Website
+            3.Description
+            4.Email
+            5.PhoneNo
+            6.ContactPerson
+            7. Status(True or false)
+            </summary>
+            <seealso>
+                <cref>
+                    MediatR.IRequest{(System.Boolean Succeed, System.String Message,
+                    Application.Response.NotificationReceiver.CreateNotificationReceiverResponse Response)}
+                </cref>
+            </seealso>
+            <seealso>
+                <cref>Application.Interfaces.IMapFrom{Domain.Entities.NotificationReceiver}</cref>
+            </seealso>
+        </member>
+        <member name="P:Application.Request.NotificationReceiver.CreateNotificationReceiverRequest.Roles">
+            <summary>
+            Gets or sets the roles.
+            </summary>
+            <value>
+            The roles.
+            </value>
+        </member>
+        <member name="P:Application.Request.NotificationReceiver.CreateNotificationReceiverRequest.UserEmails">
+            <summary>
+            Gets or sets the user emails.
+            </summary>
+            <value>
+            The user emails.
+            </value>
+        </member>
+        <member name="P:Application.Request.NotificationReceiver.CreateNotificationReceiverRequest.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.NotificationReceiver.CreateNotificationReceiverRequest.NotificationActionType">
+            <summary>
+            Gets or sets the type of the notification action.
+            </summary>
+            <value>
+            The type of the notification action.
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.NotificationReceiver.DeleteNotificationReceiverRequest" -->
+        <member name="P:Application.Request.NotificationReceiver.DeleteNotificationReceiverRequest.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.NotificationReceiver.GetAllNotificationReceiverRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Request.NotificationReceiver.GetNotificationReceiverByIdRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Request.NotificationReceiver.UpdateNotificationReceiverRequest.Roles">
+            <summary>
+            Gets or sets the roles.
+            </summary>
+            <value>
+            The roles.
+            </value>
+        </member>
+        <member name="P:Application.Request.NotificationReceiver.UpdateNotificationReceiverRequest.UserEmails">
+            <summary>
+            Gets or sets the user emails.
+            </summary>
+            <value>
+            The user emails.
+            </value>
+        </member>
+        <member name="P:Application.Request.NotificationReceiver.UpdateNotificationReceiverRequest.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.NotificationReceiver.UpdateNotificationReceiverRequest.NotificationActionType">
+            <summary>
+            Gets or sets the type of the notification action.
+            </summary>
+            <value>
+            The type of the notification action.
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.Role.CreateRoleRequest" -->
+        <member name="P:Application.Request.Role.CreateRoleRequest.Name">
+             <summary>
+            
+             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.Role.DeleteRoleRequest" -->
+        <member name="P:Application.Request.Role.DeleteRoleRequest.Name">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.Role.GetAllRoleRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Request.Role.GetRoleByIdRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Request.ServiceType.CreateServiceTypeRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Request.ServiceType.CreateServiceTypeRequest.ServiceTypeName">
+            <summary>
+            Gets or sets the service type.
+            </summary>
+            <value>
+            The service Type
+            </value>
+        </member>
+        <member name="T:Application.Request.ServiceType.GetAllServiceTypeRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.ServiceType.GetServiceTypeByIdRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Request.ServiceType.GetServiceTypeByIdRequest.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:Application.Request.ServiceType.UpdateServiceTypeRequest">
+             <summary>
+            
+             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Application.Request.ServiceType.UpdateServiceTypeRequest.Id" -->
+        <member name="P:Application.Request.ServiceType.UpdateServiceTypeRequest.ServiceTypeName">
+            <summary>
+            Gets or sets the service type.
+            </summary>
+            <value>
+            The service Type
+            </value>
+        </member>
+        <member name="P:Application.Request.ServiceType.UpdateServiceTypeRequest.Status">
+            <summary>
+            Gets or sets the Status.
+            </summary>
+            <value>
+            The Status
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.State.CreateStateRequest" -->
+        <member name="P:Application.Request.State.CreateStateRequest.Name">
+             <summary>
+            
+             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.State.DeleteStateRequest" -->
+        <member name="P:Application.Request.State.DeleteStateRequest.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.State.GetAllStateRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Request.State.GetStateByIdRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.Unit.CreateUnitRequest" -->
+        <member name="P:Application.Request.Unit.CreateUnitRequest.Name">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Request.Unit.CreateUnitRequest.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="P:Application.Request.Unit.CreateUnitRequest.DepartmentId">
+            <summary>
+            Gets or sets the department identifier.
+            </summary>
+            <value>
+            The department identifier.
+            </value>
+        </member>
+        <member name="P:Application.Request.Unit.CreateUnitRequest.MinistryId">
+            <summary>
+            Gets or sets the ministry identifier.
+            </summary>
+            <value>
+            The ministry identifier.
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.Unit.DeleteUnitRequest" -->
+        <member name="P:Application.Request.Unit.DeleteUnitRequest.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.Unit.GetAllUnitRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Request.Unit.GetUnitByIdRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Request.Unit.UpdateUnitRequest.MinistryId">
+            <summary>
+            Gets or sets the ministry identifier.
+            </summary>
+            <value>
+            The ministry identifier.
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.UnitOfMeasurement.CreateUnitOfMeasurementRequest" -->
+        <member name="P:Application.Request.UnitOfMeasurement.CreateUnitOfMeasurementRequest.Name">
+             <summary>
+            
+             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Application.Request.UnitOfMeasurement.DeleteUnitOfMeasurementRequest" -->
+        <member name="P:Application.Request.UnitOfMeasurement.DeleteUnitOfMeasurementRequest.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Request.UnitOfMeasurement.GetAllUnitOfMeasurementRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Request.UnitOfMeasurement.GetUnitOfMeasurementByIdRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>MediatR.IRequest{Application.Response.Vendor.GetAllVendorResponse}</cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Request.User.AuthenticateRequest">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:AspNet.Security.OpenIdConnect.Primitives.OpenIdConnectRequest" />
+             <seealso>
+             <cref>
+             MediatR.IRequest{(bool Succeed, string Message, object user)}
+             </cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Request.User.AuthenticateRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Request.User.AuthenticateRequest"/> class.
+            </summary>
+        </member>
+        <member name="P:Application.Request.User.AuthenticateRequest.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="T:Application.Request.User.CreateUserRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>
+                     MediatR.IRequest{(System.Boolean succeed, System.String message, Application.Response.User.CreateUserResponse
+                     userResponse)}
+                 </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Request.User.CreateUserRequest.FullName">
+            <summary>
+            Gets or sets the full name.
+            </summary>
+            <value>
+            The full name.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.CreateUserRequest.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.CreateUserRequest.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+            <value>
+            The phone.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.CreateUserRequest.Roles">
+            <summary>
+            Gets or sets the roles.
+            </summary>
+            <value>
+            The roles.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.CreateUserRequest.UserName">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>
+            The name of the user.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.CreateUserRequest.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>
+            The password.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.CreateUserRequest.BusinessId">
+            <summary>
+            Gets or sets the business identifier.
+            </summary>
+            <value>
+            The buisness identifier.
+            </value>
+        </member>
+        <member name="T:Application.Request.User.EditUserRequest">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>
+                     MediatR.IRequest{(System.Boolean succeed, System.String message, Application.Response.User.CreateUserResponse
+                     userResponse)}
+                 </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Request.User.EditUserRequest.FullName">
+            <summary>
+            Gets or sets the full name.
+            </summary>
+            <value>
+            The full name.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.EditUserRequest.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.EditUserRequest.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+            <value>
+            The phone.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.EditUserRequest.Roles">
+            <summary>
+            Gets or sets the roles.
+            </summary>
+            <value>
+            The roles.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.EditUserRequest.UserName">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>
+            The name of the user.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.EditUserRequest.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>
+            The password.
+            </value>
+        </member>
+        <member name="P:Application.Request.User.EditUserRequest.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="T:Application.Request.User.GetUsersRequest">
+             <summary>
+            
+             </summary>
+             <seealso cref="!:MediatR.IRequest&lt;CreateUserResponse[]&gt;" />
+        </member>
+        <member name="T:Application.Response.Company.CreateCompanyResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Company.CreateCompanyResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.Company.DeleteCompanyResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Company.DeleteCompanyResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.Company.GetAllCompanyResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.Company}
+             </cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Response.Company.GetCompanyByIdResponse">
+             <summary>
+            
+             </summary>
+             <seealso>
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.Country
+             </cref>
+             </seealso>
+        </member>
+        <member name="T:Application.Response.Company.UpdateCompanyResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <Cref>
+             Application.Interfaces.IMapFrom{Application.Request.Unit.UpdateUnitRequest}
+             </Cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.Company.UpdateCompanyResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:Application.Response.Country.CreateCountryResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Country.CreateCountryResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.Country.DeleteCountryResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Country.DeleteCountryResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.Country.GetAllCountryResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.Country}
+             </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.Country.GetAllCountryResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Country.GetAllCountryResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.Country.GetAllCountryResponse.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="T:Application.Response.Country.GetCountryByIdResponse">
+             <summary>
+            
+             </summary>
+             <seealso>
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.Country
+             </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.Country.GetCountryByIdResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Country.GetCountryByIdResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.Country.GetCountryByIdResponse.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="T:Application.Response.Country.UpdateCountryResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <Cref>
+             Application.Interfaces.IMapFrom{Application.Request.Unit.UpdateUnitRequest}
+             </Cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.Country.UpdateCountryResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:Application.Response.Employee.CreateEmployeeResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Employee.CreateEmployeeResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.CreateEmployeeResponse.StaffId">
+            <summary>
+            Gets or sets the staff identifier.
+            </summary>
+            <value>
+            The staff identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.CreateEmployeeResponse.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Application.Response.Employee.CreateEmployeeResponse.ErrorMessage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Application.Response.Employee.DeleteEmployeeResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Employee.DeleteEmployeeResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.Employee.GetAllEmployeeResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.Id">
+            <summary>
+            Gets or sets the employee identifier.
+            </summary>
+            <value>
+            The employee identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>
+            The first name.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>
+            The last name.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.FullName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>
+            The last name.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.StaffId">
+            <summary>
+            Gets or sets the staff identifier.
+            </summary>
+            <value>
+            The staff identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.MinistryId">
+            <summary>
+            Gets or sets the ministry identifier.
+            </summary>
+            <value>
+            The ministry identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.MinistryName">
+            <summary>
+            Gets or sets the name of the ministry.
+            </summary>
+            <value>
+            The name of the ministry.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.DepartmentId">
+            <summary>
+            Gets or sets the department identifier.
+            </summary>
+            <value>
+            The department identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.DepartmentName">
+            <summary>
+            Gets or sets the name of the department.
+            </summary>
+            <value>
+            The name of the department.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.Designation">
+            <summary>
+            Gets or sets the designation.
+            </summary>
+            <value>
+            The designation.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.PhoneNo">
+            <summary>
+            Gets or sets the phone no.
+            </summary>
+            <value>
+            The phone no.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.Address">
+            <summary>
+            Gets or sets the address.
+            </summary>
+            <value>
+            The address.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.Picture">
+            <summary>
+            Gets or sets the picture.
+            </summary>
+            <value>
+            The picture.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.LocationName">
+            <summary>
+            Gets or sets the name of the location.
+            </summary>
+            <value>
+            The name of the location.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.UnitId">
+            <summary>
+            Gets or sets the UnitId identifier.
+            </summary>
+            <value>
+            The UnitId identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.UserId">
+            <summary>
+            Gets or sets the user identifier.
+            </summary>
+            <value>
+            The user identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetAllEmployeeResponse.Status">
+            <summary>
+            Gets or sets the user Status.
+            </summary>
+            <value>
+            The user Status.
+            </value>
+        </member>
+        <member name="T:Application.Response.Employee.GetEmployeeByIdResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.Id">
+            <summary>
+            Gets or sets the employee identifier.
+            </summary>
+            <value>
+            The employee identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>
+            The first name.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>
+            The last name.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.StaffId">
+            <summary>
+            Gets or sets the staff identifier.
+            </summary>
+            <value>
+            The staff identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.MinistryId">
+            <summary>
+            Gets or sets the ministry identifier.
+            </summary>
+            <value>
+            The ministry identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.DepartmentId">
+            <summary>
+            Gets or sets the department identifier.
+            </summary>
+            <value>
+            The department identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.Designation">
+            <summary>
+            Gets or sets the designation.
+            </summary>
+            <value>
+            The designation.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.PhoneNo">
+            <summary>
+            Gets or sets the phone no.
+            </summary>
+            <value>
+            The phone no.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.Address">
+            <summary>
+            Gets or sets the address.
+            </summary>
+            <value>
+            The address.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.Picture">
+            <summary>
+            Gets or sets the picture.
+            </summary>
+            <value>
+            The picture.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.UnitId">
+            <summary>
+            Gets or sets the UnitId identifier.
+            </summary>
+            <value>
+            The UnitId identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.UserId">
+            <summary>
+            Gets or sets the user identifier.
+            </summary>
+            <value>
+            The user identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Employee.GetEmployeeByIdResponse.Status">
+            <summary>
+            Gets or sets the user Status.
+            </summary>
+            <value>
+            The user Status.
+            </value>
+        </member>
+        <member name="T:Application.Response.Employee.UpdateEmployeeResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Employee.UpdateEmployeeResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.FileUpload.GetUploadedFileResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.FileUpload.GetUploadedFileResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.FileUpload.GetUploadedFileResponse.File">
+            <summary>
+            Gets or sets the file.
+            </summary>
+            <value>
+            The file.
+            </value>
+        </member>
+        <member name="P:Application.Response.FileUpload.GetUploadedFileResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.FileUpload.GetUploadedFileResponse.EntityType">
+            <summary>
+            Gets or sets the type of the entity.
+            </summary>
+            <value>
+            The type of the entity.
+            </value>
+        </member>
+        <member name="P:Application.Response.FileUpload.GetUploadedFileResponse.MimeType">
+            <summary>
+            Gets or sets the type of the MIME.
+            </summary>
+            <value>
+            The type of the MIME.
+            </value>
+        </member>
+        <member name="P:Application.Response.FileUpload.GetUploadedFileResponse.EntityId">
+            <summary>
+            Gets or sets the entity identifier.
+            </summary>
+            <value>
+            The entity identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.FileUpload.GetUploadedFileResponse.Ext">
+            <summary>
+            Gets or sets the ext.
+            </summary>
+            <value>
+            The ext.
+            </value>
+        </member>
+        <member name="P:Application.Response.FileUpload.GetUploadedFileResponse.Size">
+            <summary>
+            Gets or sets the size.
+            </summary>
+            <value>
+            The size.
+            </value>
+        </member>
+        <member name="T:Application.Response.ItemType.CreateItemTypeResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Application.Response.ItemType.CreateItemTypeResponse.Id" -->
+        <member name="P:Application.Response.ItemType.CreateItemTypeResponse.ItemTypeName">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="T:Application.Response.ItemType.GetAllItemTypeByIdResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.ItemType.GetAllItemTypeByIdResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.ItemType.GetAllItemTypeByIdResponse.ItemTypeName">
+            <summary>
+            Gets or sets the service type.
+            </summary>
+            <value>
+            The service Type
+            </value>
+        </member>
+        <member name="P:Application.Response.ItemType.GetAllItemTypeByIdResponse.Status">
+            <summary>
+            Gets or sets the Status.
+            </summary>
+            <value>
+            The Status
+            </value>
+        </member>
+        <member name="T:Application.Response.ItemType.GetAllItemTypeResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.ItemType.GetAllItemTypeResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.ItemType.GetAllItemTypeResponse.ItemTypeName">
+            <summary>
+            Gets or sets the service type.
+            </summary>
+            <value>
+            The service Type
+            </value>
+        </member>
+        <member name="P:Application.Response.ItemType.GetAllItemTypeResponse.Status">
+            <summary>
+            Gets or sets the Status.
+            </summary>
+            <value>
+            The Status
+            </value>
+        </member>
+        <member name="T:Application.Response.ItemType.UpdateItemTypeResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.ItemType.UpdateItemTypeResponse.Id">
+            <summary>
+            vendor id
+            </summary>
+        </member>
+        <member name="T:Application.Response.LocalGovernment.CreateLocalGovernmentResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.CreateLocalGovernmentResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.LocalGovernment.DeleteLocalGovernmentResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.DeleteLocalGovernmentResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.LocalGovernment.GetAllLocalGovernmentResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.LocalGovernment}
+             </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.GetAllLocalGovernmentResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.GetAllLocalGovernmentResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.GetAllLocalGovernmentResponse.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.GetAllLocalGovernmentResponse.State">
+            <summary>
+            Gets or sets the Country.
+            </summary>
+            <value>
+            The Country.
+            </value>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.GetAllLocalGovernmentResponse.StateId">
+            <summary>
+            Gets or sets the CountryId.
+            </summary>
+            <value>
+            The CountryId.
+            </value>
+        </member>
+        <member name="T:Application.Response.LocalGovernment.GetLocalGovernmentByIdResponse">
+             <summary>
+            
+             </summary>
+             <seealso>
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.LocalGovernment
+             </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.GetLocalGovernmentByIdResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.GetLocalGovernmentByIdResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.GetLocalGovernmentByIdResponse.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.GetLocalGovernmentByIdResponse.State">
+            <summary>
+            Gets or sets the Country.
+            </summary>
+            <value>
+            The Country.
+            </value>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.GetLocalGovernmentByIdResponse.StateId">
+            <summary>
+            Gets or sets the CountryId.
+            </summary>
+            <value>
+            The CountryId.
+            </value>
+        </member>
+        <member name="T:Application.Response.LocalGovernment.UpdateLocalGovernmentResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <Cref>
+             Application.Interfaces.IMapFrom{Application.Request.Unit.UpdateUnitRequest}
+             </Cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.LocalGovernment.UpdateLocalGovernmentResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:Application.Response.NotificationReceiver.CreateNotificationReceiverResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.CreateNotificationReceiverResponse.Roles">
+            <summary>
+            Gets or sets the roles.
+            </summary>
+            <value>
+            The roles.
+            </value>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.CreateNotificationReceiverResponse.UserEmails">
+            <summary>
+            Gets or sets the user emails.
+            </summary>
+            <value>
+            The user emails.
+            </value>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.CreateNotificationReceiverResponse.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.CreateNotificationReceiverResponse.NotificationActionType">
+            <summary>
+            Gets or sets the type of the notification action.
+            </summary>
+            <value>
+            The type of the notification action.
+            </value>
+        </member>
+        <member name="T:Application.Response.NotificationReceiver.DeleteNotificationReceiverResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.DeleteNotificationReceiverResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.GetAllNotificationReceiverResponse.Roles">
+            <summary>
+            Gets or sets the roles.
+            </summary>
+            <value>
+            The roles.
+            </value>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.GetAllNotificationReceiverResponse.UserEmails">
+            <summary>
+            Gets or sets the user emails.
+            </summary>
+            <value>
+            The user emails.
+            </value>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.GetAllNotificationReceiverResponse.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.GetAllNotificationReceiverResponse.NotificationActionType">
+            <summary>
+            Gets or sets the type of the notification action.
+            </summary>
+            <value>
+            The type of the notification action.
+            </value>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.GetAllNotificationReceiverResponse.NotificationActionName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.GetNotificationReceiverByIdResponse.Roles">
+            <summary>
+            Gets or sets the roles.
+            </summary>
+            <value>
+            The roles.
+            </value>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.GetNotificationReceiverByIdResponse.UserEmails">
+            <summary>
+            Gets or sets the user emails.
+            </summary>
+            <value>
+            The user emails.
+            </value>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.GetNotificationReceiverByIdResponse.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.NotificationReceiver.GetNotificationReceiverByIdResponse.NotificationActionType">
+            <summary>
+            Gets or sets the type of the notification action.
+            </summary>
+            <value>
+            The type of the notification action.
+            </value>
+        </member>
+        <member name="T:Application.Response.Role.CreateRoleResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Role.CreateRoleResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.Role.DeleteRoleResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Role.DeleteRoleResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.ServiceType.CreateServiceTypeResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Application.Response.ServiceType.CreateServiceTypeResponse.Id" -->
+        <member name="P:Application.Response.ServiceType.CreateServiceTypeResponse.ServiceTypeName">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="T:Application.Response.ServiceType.GetAllServiceTypeResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.ServiceType.GetAllServiceTypeResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.ServiceType.GetAllServiceTypeResponse.ServiceTypeName">
+            <summary>
+            Gets or sets the service type.
+            </summary>
+            <value>
+            The service Type
+            </value>
+        </member>
+        <member name="P:Application.Response.ServiceType.GetAllServiceTypeResponse.Status">
+            <summary>
+            Gets or sets the Status.
+            </summary>
+            <value>
+            The Status
+            </value>
+        </member>
+        <member name="T:Application.Response.ServiceType.GetServiceTypeByIdResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.ServiceType.GetServiceTypeByIdResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.ServiceType.GetServiceTypeByIdResponse.ServiceTypeName">
+            <summary>
+            Gets or sets the service type.
+            </summary>
+            <value>
+            The service Type
+            </value>
+        </member>
+        <member name="P:Application.Response.ServiceType.GetServiceTypeByIdResponse.Status">
+            <summary>
+            Gets or sets the Status.
+            </summary>
+            <value>
+            The Status
+            </value>
+        </member>
+        <member name="P:Application.Response.ServiceType.UpdateServiceTypeResponse.Id">
+            <summary>
+            vendor id
+            </summary>
+        </member>
+        <member name="T:Application.Response.State.CreateStateResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.State.CreateStateResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.State.DeleteStateResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.State.DeleteStateResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.State.GetAllStateResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.State}
+             </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.State.GetAllStateResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.State.GetAllStateResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.State.GetAllStateResponse.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="P:Application.Response.State.GetAllStateResponse.CountryId">
+            <summary>
+            Gets or sets the CountryId.
+            </summary>
+            <value>
+            The CountryId.
+            </value>
+        </member>
+        <member name="P:Application.Response.State.GetAllStateResponse.Country">
+            <summary>
+            Gets or sets the Country.
+            </summary>
+            <value>
+            The Country.
+            </value>
+        </member>
+        <member name="T:Application.Response.State.GetStateByIdResponse">
+             <summary>
+            
+             </summary>
+             <seealso>
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.State
+             </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.State.GetStateByIdResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.State.GetStateByIdResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.State.GetStateByIdResponse.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="P:Application.Response.State.GetStateByIdResponse.CountryId">
+            <summary>
+            Gets or sets the CountryId.
+            </summary>
+            <value>
+            The CountryId.
+            </value>
+        </member>
+        <member name="P:Application.Response.State.GetStateByIdResponse.Country">
+            <summary>
+            Gets or sets the Country.
+            </summary>
+            <value>
+            The Country.
+            </value>
+        </member>
+        <member name="T:Application.Response.State.UpdateStateResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <Cref>
+             Application.Interfaces.IMapFrom{Application.Request.Unit.UpdateUnitRequest}
+             </Cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.State.UpdateStateResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.ProductModelNo">
+            <summary>
+            Gets or sets the product model no.
+            </summary>
+            <value>
+            The product model no.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.IdentityNumber">
+            <summary>
+            Gets or sets the identity number.
+            </summary>
+            <value>
+            The identity number.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.UnitPrice">
+            <summary>
+            Gets or sets the unit price.
+            </summary>
+            <value>
+            The unit price.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.StockQuantity">
+            <summary>
+            Gets or sets the stock quantity.
+            </summary>
+            <value>
+            The stock quantity.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.TotalPrice">
+            <summary>
+            Gets or sets the total price.
+            </summary>
+            <value>
+            The total price.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.ReOrderLevel">
+            <summary>
+            Gets or sets the re order level.
+            </summary>
+            <value>
+            The re order level.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.GroupId">
+            <summary>
+            Gets or sets the group identifier.
+            </summary>
+            <value>
+            The group identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.SubGroupId">
+            <summary>
+            Gets or sets the sub group identifier.
+            </summary>
+            <value>
+            The sub group identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.VendorId">
+            <summary>
+            Gets or sets the vendor identifier.
+            </summary>
+            <value>
+            The vendor identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.LocationThreshold">
+            <summary>
+            Gets or sets the location threshold.
+            </summary>
+            <value>
+            The location threshold.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.UnitOfMeasurementId">
+            <summary>
+            Gets or sets the unit of measurement identifier.
+            </summary>
+            <value>
+            The unit of measurement identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.DepreciationYear">
+            <summary>
+            Gets or sets the depreciation year.
+            </summary>
+            <value>
+            The depreciation year.
+            </value>
+        </member>
+        <member name="P:Application.Response.Stock.CreateStockResponse.AttachmentLink">
+            <summary>
+            Gets or sets the attachment link.
+            </summary>
+            <value>
+            The attachment link.
+            </value>
+        </member>
+        <member name="T:Application.Response.Unit.CreateUnitResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Unit.CreateUnitResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.Unit.DeleteUnitResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.Unit.DeleteUnitResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.Unit.GetAllUnitResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.Unit}
+             </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.Unit.GetAllUnitResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Unit.GetAllUnitResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.Unit.GetAllUnitResponse.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="P:Application.Response.Unit.GetAllUnitResponse.MinistryId">
+            <summary>
+            Gets or sets the ministry identifier.
+            </summary>
+            <value>
+            The ministry identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Unit.GetAllUnitResponse.DepartmentId">
+            <summary>
+            Gets or sets the department identifier.
+            </summary>
+            <value>
+            The department identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Unit.GetAllUnitResponse.DepartmentName">
+            <summary>
+            Gets or sets the name of the department.
+            </summary>
+            <value>
+            The name of the department.
+            </value>
+        </member>
+        <member name="P:Application.Response.Unit.GetAllUnitResponse.MinistryName">
+            <summary>
+            Gets or sets the name of the ministry.
+            </summary>
+            <value>
+            The name of the ministry.
+            </value>
+        </member>
+        <member name="T:Application.Response.Unit.GetUnitByIdResponse">
+             <summary>
+            
+             </summary>
+             <seealso>
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.Unit
+             </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.Unit.GetUnitByIdResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.Unit.GetUnitByIdResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.Unit.GetUnitByIdResponse.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="T:Application.Response.Unit.UpdateUnitResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <Cref>
+             Application.Interfaces.IMapFrom{Application.Request.Unit.UpdateUnitRequest}
+             </Cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.Unit.UpdateUnitResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:Application.Response.UnitOfMeasurement.CreateUnitOfMeasurementResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.UnitOfMeasurement.CreateUnitOfMeasurementResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.UnitOfMeasurement.DeleteUnitOfMeasurementResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.UnitOfMeasurement.DeleteUnitOfMeasurementResponse.Id">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="T:Application.Response.UnitOfMeasurement.GetAllUnitOfMeasurementResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.UnitOfMeasurement}
+             </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.UnitOfMeasurement.GetAllUnitOfMeasurementResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.UnitOfMeasurement.GetAllUnitOfMeasurementResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.UnitOfMeasurement.GetAllUnitOfMeasurementResponse.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="T:Application.Response.UnitOfMeasurement.GetUnitOfMeasurementByIdResponse">
+             <summary>
+            
+             </summary>
+             <seealso>
+             <cref>
+             Application.Interfaces.IMapFrom{Domain.Entities.UnitOfMeasurement
+             </cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.UnitOfMeasurement.GetUnitOfMeasurementByIdResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.UnitOfMeasurement.GetUnitOfMeasurementByIdResponse.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Application.Response.UnitOfMeasurement.GetUnitOfMeasurementByIdResponse.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="T:Application.Response.UnitOfMeasurement.UpdateUnitOfMeasurementResponse">
+             <summary>
+            
+             </summary>
+             <seealso >
+             <Cref>
+             Application.Interfaces.IMapFrom{Application.Request.Unit.UpdateUnitRequest}
+             </Cref>
+             </seealso>
+        </member>
+        <member name="P:Application.Response.UnitOfMeasurement.UpdateUnitOfMeasurementResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:Application.Response.User.CreateUserResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.User.CreateUserResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.CreateUserResponse.FullName">
+            <summary>
+            Gets or sets the full name.
+            </summary>
+            <value>
+            The full name.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.CreateUserResponse.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.CreateUserResponse.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+            <value>
+            The phone.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.CreateUserResponse.Roles">
+            <summary>
+            Gets or sets the roles.
+            </summary>
+            <value>
+            The roles.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.CreateUserResponse.UserName">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>
+            The name of the user.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.CreateUserResponse.BusinessId">
+            <summary>
+            Gets or sets the Business identifier.
+            </summary>
+            <value>
+            The Business identifier.
+            </value>
+        </member>
+        <member name="T:Application.Response.User.EditUserResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.User.EditUserResponse.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.EditUserResponse.FullName">
+            <summary>
+            Gets or sets the full name.
+            </summary>
+            <value>
+            The full name.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.EditUserResponse.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.EditUserResponse.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+            <value>
+            The phone.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.EditUserResponse.Roles">
+            <summary>
+            Gets or sets the roles.
+            </summary>
+            <value>
+            The roles.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.EditUserResponse.UserName">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>
+            The name of the user.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.EditUserResponse.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="T:Application.Response.User.UserLocationResponse">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Application.Response.User.UserLocationResponse.LocationName">
+            <summary>
+            Gets or sets the name of the location.
+            </summary>
+            <value>
+            The name of the location.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.UserLocationResponse.RoleName">
+            <summary>
+            Gets or sets the name of the role.
+            </summary>
+            <value>
+            The name of the role.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.UserLocationResponse.LocationId">
+            <summary>
+            Gets or sets the location identifier.
+            </summary>
+            <value>
+            The location identifier.
+            </value>
+        </member>
+        <member name="P:Application.Response.User.UserLocationResponse.RoleId">
+            <summary>
+            Gets or sets the role identifier.
+            </summary>
+            <value>
+            The role identifier.
+            </value>
+        </member>
+        <member name="T:Application.Service.BarcodeGeneratorService">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:Application.Interfaces.IBarcodeGeneratorService" />
+        </member>
+        <member name="M:Application.Service.BarcodeGeneratorService.GenerateBarCode(System.String)">
+            <summary>
+            Generates the bar code.
+            </summary>
+            <param name="code">The code.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Application.Service.GeneratorService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Service.GeneratorService.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Service.GeneratorService"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+        </member>
+        <member name="M:Application.Service.GeneratorService.GenerateAssetId">
+            <summary>
+            Generates the asset identifier.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Application.Service.GeneratorService.GenerateId(System.String)">
+            <summary>
+            configuration code
+            </summary>
+            <param name="initial"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Application.Service.QrCodeGeneratorService">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:Application.Interfaces.IQrCodeGeneratorService" />
+        </member>
+        <member name="M:Application.Service.QrCodeGeneratorService.GenerateQrCode(System.String)">
+            <summary>
+            Generates the qr code.
+            </summary>
+            <param name="code">The code.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

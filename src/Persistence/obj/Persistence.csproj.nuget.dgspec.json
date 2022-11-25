@@ -1,0 +1,376 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Persistence/Persistence.csproj": {}
+  },
+  "projects": {
+    "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/Application.csproj",
+        "projectName": "Application",
+        "projectPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/Application.csproj",
+        "packagesPath": "/Users/ibrahim.abdullahi/.nuget/packages/",
+        "outputPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ibrahim.abdullahi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/Domain.csproj": {
+                "projectPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AspNet.Security.OpenIdConnect.Server": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "DotNetCore.NPOI": {
+              "target": "Package",
+              "version": "[1.2.2, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[9.2.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "NetBarcode": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "OpenIddict.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Core": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.EntityFrameworkCore.Models": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Server.AspNetCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Validation.AspNetCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Validation.ServerIntegration": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.22.0, )"
+            },
+            "Syncfusion.DocIO.Net.Core": {
+              "target": "Package",
+              "version": "[18.4.0.43, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/Domain.csproj",
+        "packagesPath": "/Users/ibrahim.abdullahi/.nuget/packages/",
+        "outputPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ibrahim.abdullahi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AspNet.Security.OpenIdConnect.Server": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "OpenIddict.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Core": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.EntityFrameworkCore.Models": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Server.AspNetCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Validation.AspNetCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Validation.ServerIntegration": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Persistence/Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Persistence/Persistence.csproj",
+        "projectName": "Persistence",
+        "projectPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Persistence/Persistence.csproj",
+        "packagesPath": "/Users/ibrahim.abdullahi/.nuget/packages/",
+        "outputPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ibrahim.abdullahi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/Application.csproj": {
+                "projectPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/Application.csproj"
+              },
+              "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/Domain.csproj": {
+                "projectPath": "/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AspNet.Security.OpenIdConnect.Server": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[5.3.2, )"
+            },
+            "Microsoft.AspNetCore.Hosting": {
+              "target": "Package",
+              "version": "[2.2.7, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "OpenIddict.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Core": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.EntityFrameworkCore.Models": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Server.AspNetCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Validation.AspNetCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "OpenIddict.Validation.ServerIntegration": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

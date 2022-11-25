@@ -1,0 +1,12 @@
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/bin/Debug/net6.0/Domain.deps.json
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/bin/Debug/net6.0/Domain.dll
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/bin/Debug/net6.0/Domain.pdb
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/obj/Debug/net6.0/Domain.csproj.AssemblyReference.cache
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/obj/Debug/net6.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/obj/Debug/net6.0/Domain.AssemblyInfoInputs.cache
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/obj/Debug/net6.0/Domain.AssemblyInfo.cs
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/obj/Debug/net6.0/Domain.csproj.CoreCompileInputs.cache
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/obj/Debug/net6.0/Domain.dll
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/obj/Debug/net6.0/refint/Domain.dll
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/obj/Debug/net6.0/Domain.pdb
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Domain/obj/Debug/net6.0/ref/Domain.dll

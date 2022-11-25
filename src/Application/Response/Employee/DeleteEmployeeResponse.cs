@@ -1,0 +1,16 @@
+﻿using Application.Interfaces;
+using Application.Request.Employee;
+
+namespace Application.Response.Employee
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public class DeleteEmployeeResponse : IMapFrom<CreateEmployeeRequest>
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        public string Id { get; set; }
+    }
+}

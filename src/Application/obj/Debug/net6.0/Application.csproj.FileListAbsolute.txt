@@ -1,0 +1,16 @@
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/bin/Debug/net6.0/Application.deps.json
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/bin/Debug/net6.0/Application.dll
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/bin/Debug/net6.0/Application.pdb
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/bin/Debug/net6.0/Application.xml
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/bin/Debug/net6.0/Domain.dll
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/bin/Debug/net6.0/Domain.pdb
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/obj/Debug/net6.0/Application.csproj.AssemblyReference.cache
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/obj/Debug/net6.0/Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/obj/Debug/net6.0/Application.AssemblyInfoInputs.cache
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/obj/Debug/net6.0/Application.AssemblyInfo.cs
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/obj/Debug/net6.0/Application.csproj.CoreCompileInputs.cache
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/obj/Debug/net6.0/Application.csproj.CopyComplete
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/obj/Debug/net6.0/Application.dll
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/obj/Debug/net6.0/refint/Application.dll
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/obj/Debug/net6.0/Application.pdb
+/Users/ibrahim.abdullahi/RiderProjects/connect2door/src/Application/obj/Debug/net6.0/ref/Application.dll
