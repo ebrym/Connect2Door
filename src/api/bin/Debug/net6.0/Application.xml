@@ -585,6 +585,231 @@
              <param name="cancellationToken"></param>
              <returns></returns>
         </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateStateCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateStateCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateStateCommand.Handle(Application.Request.State.CreateStateRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateStateValidation">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>FluentValidation.AbstractValidator{Application.Request.Unit.CreateUnitRequest}</cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateStateValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Commands.CreateStateValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.DeleteStateCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteStateCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteStateCommand.Handle(Application.Request.State.DeleteStateRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.UpdateStateCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateStateCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateStateCommand.Handle(Application.Request.State.UpdateStateRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateUnitCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateUnitCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateUnitCommand.Handle(Application.Request.Unit.CreateUnitRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateUnitValidation">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>FluentValidation.AbstractValidator{Application.Request.Unit.CreateUnitRequest}</cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateUnitValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Commands.CreateUnitValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.DeleteUnitCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteUnitCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteUnitCommand.Handle(Application.Request.Unit.DeleteUnitRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.UpdateUnitCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateUnitCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateUnitCommand.Handle(Application.Request.Unit.UpdateUnitRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateUnitOfMeasurementCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateUnitOfMeasurementCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateUnitOfMeasurementCommand.Handle(Application.Request.UnitOfMeasurement.CreateUnitOfMeasurementRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateUnitOfMeasurementValidation">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>FluentValidation.AbstractValidator{Application.Request.Unit.CreateUnitRequest}</cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateUnitOfMeasurementValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Commands.CreateUnitOfMeasurementValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.DeleteUnitOfMeasurementCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteUnitOfMeasurementCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteUnitOfMeasurementCommand.Handle(Application.Request.UnitOfMeasurement.DeleteUnitOfMeasurementRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.UpdateUnitOfMeasurementCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateUnitOfMeasurementCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateUnitOfMeasurementCommand.Handle(Application.Request.UnitOfMeasurement.UpdateUnitOfMeasurementRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
         <member name="T:Application.Features.UnitFeatures.Queries.GetAllCompanyQuery">
              <summary>
             
@@ -592,7 +817,7 @@
         </member>
         <member name="M:Application.Features.UnitFeatures.Queries.GetAllCompanyQuery.#ctor(Application.Interfaces.IApplicationDbContext)">
             <summary>
-            Initializes a new instance of the <see cref="!:GetAllUnitQuery"/> class.
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetAllUnitQuery"/> class.
             </summary>
             <param name="context">The context.</param>
         </member>
@@ -613,7 +838,7 @@
         </member>
         <member name="M:Application.Features.UnitFeatures.Queries.GetCompanyByIdQuerry.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
             <summary>
-            Initializes a new instance of the <see cref="!:GetUnitByIdQuerry"/> class.
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetUnitByIdQuerry"/> class.
             </summary>
             <param name="applicationDbContext">The application database context.</param>
             <param name="mapper">The mapper.</param>
@@ -635,7 +860,7 @@
         </member>
         <member name="M:Application.Features.UnitFeatures.Queries.GetAllCountryQuery.#ctor(Application.Interfaces.IApplicationDbContext)">
             <summary>
-            Initializes a new instance of the <see cref="!:GetAllUnitQuery"/> class.
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetAllUnitQuery"/> class.
             </summary>
             <param name="context">The context.</param>
         </member>
@@ -656,7 +881,7 @@
         </member>
         <member name="M:Application.Features.UnitFeatures.Queries.GetCountryByIdQuerry.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
             <summary>
-            Initializes a new instance of the <see cref="!:GetUnitByIdQuerry"/> class.
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetUnitByIdQuerry"/> class.
             </summary>
             <param name="applicationDbContext">The application database context.</param>
             <param name="mapper">The mapper.</param>
@@ -678,7 +903,7 @@
         </member>
         <member name="M:Application.Features.UnitFeatures.Queries.GetAllLocalGovernmentQuery.#ctor(Application.Interfaces.IApplicationDbContext)">
             <summary>
-            Initializes a new instance of the <see cref="!:GetAllUnitQuery"/> class.
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetAllUnitQuery"/> class.
             </summary>
             <param name="context">The context.</param>
         </member>
@@ -699,12 +924,141 @@
         </member>
         <member name="M:Application.Features.UnitFeatures.Queries.GetLocalGovernmentByIdQuerry.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
             <summary>
-            Initializes a new instance of the <see cref="!:GetUnitByIdQuerry"/> class.
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetUnitByIdQuerry"/> class.
             </summary>
             <param name="applicationDbContext">The application database context.</param>
             <param name="mapper">The mapper.</param>
         </member>
         <member name="M:Application.Features.UnitFeatures.Queries.GetLocalGovernmentByIdQuerry.Handle(Application.Request.LocalGovernment.GetLocalGovernmentByIdRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetAllStateQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllStateQuery.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetAllUnitQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllStateQuery.Handle(Application.Request.State.GetAllStateRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetStateByIdQuerry">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetStateByIdQuerry.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetUnitByIdQuerry"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetStateByIdQuerry.Handle(Application.Request.State.GetStateByIdRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetAllUnitQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllUnitQuery.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetAllUnitQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllUnitQuery.Handle(Application.Request.Unit.GetAllUnitRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetUnitByIdQuerry">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetUnitByIdQuerry.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetUnitByIdQuerry"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetUnitByIdQuerry.Handle(Application.Request.Unit.GetUnitByIdRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetAllUnitOfMeasurementQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllUnitOfMeasurementQuery.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetAllUnitQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllUnitOfMeasurementQuery.Handle(Application.Request.UnitOfMeasurement.GetAllUnitOfMeasurementRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetUnitOfMeasurementByIdQuerry">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetUnitOfMeasurementByIdQuerry.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Queries.GetUnitByIdQuerry"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetUnitOfMeasurementByIdQuerry.Handle(Application.Request.UnitOfMeasurement.GetUnitOfMeasurementByIdRequest,System.Threading.CancellationToken)">
             <summary>
             Handles a request
             </summary>
