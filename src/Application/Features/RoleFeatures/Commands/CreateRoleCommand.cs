@@ -50,12 +50,11 @@ namespace Application.Features.RoleFeatures.Commands
         public async Task<(bool Succeed, string Message, CreateRoleResponse Response)> Handle(CreateRoleRequest request, CancellationToken cancellationToken)
         {
             var role = mapper.Map<Role>(request);
-
             var roleNameExist = await roleManager.Roles.FirstOrDefaultAsync(x => x.Name.Equals(request.Name), cancellationToken); ;
             if (roleNameExist != null)
                 return (false, "A Role with this name has already been created", null);
             //perform insert
-            //role.CreatedBy = "System";
+            role.CreatedBy = "System";
             await roleManager.CreateAsync(role);
 
             // mapper can be used here

@@ -17,6 +17,7 @@ using System.Security.Claims;
 using OpenIddict.Abstractions;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 using OpenIddict.EntityFrameworkCore.Models;
+using OpenIddict.Server.AspNetCore;
 using OpenIddict.Validation.AspNetCore;
 using OpenIdConnectExtensions = AspNet.Security.OpenIdConnect.Extensions.OpenIdConnectExtensions;
 
@@ -138,7 +139,7 @@ namespace Api.Endpoints
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(400)]
-        public async Task<IActionResult> AuthenticateUser(AuthenticateRequest model)
+        public async Task<IActionResult> AuthenticateUser([FromForm]AuthenticateRequest model)
         {
             if (ModelState.IsValid)
             {
@@ -146,7 +147,9 @@ namespace Api.Endpoints
                 if (succeed)
                 {
                     var ticket = await CreateTicketAsync(model, user);
-                    return SignIn(ticket.Principal, ticket.Properties, ticket.AuthenticationScheme);
+                   // ticket.AuthenticationScheme = OpenIddictServerAspNetCoreDefaults.AuthenticationScheme;
+                    return SignIn(ticket.Principal, ticket.Properties,
+                        OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);//ticket.AuthenticationScheme);
                 }
                 return BadRequest(new OpenIdConnectResponse
                 {

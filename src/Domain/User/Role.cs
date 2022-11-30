@@ -34,7 +34,7 @@ public class Role : IdentityRole
     /// <value>
     /// The deleted by.
     /// </value>
-    public string DeletedBy { get; set; }
+    public string? DeletedBy { get; set; }
 
     /// <summary>
     /// Gets or sets the date deleted.
@@ -50,7 +50,7 @@ public class Role : IdentityRole
     /// <value>
     /// The Modified by.
     /// </value>
-    public string ModifiedBy { get; set; }
+    public string? ModifiedBy { get; set; }
 
     /// <summary>
     /// Gets or sets the date Modified.

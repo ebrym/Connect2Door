@@ -22,7 +22,7 @@ public class User : IdentityUser
     /// <value>
     /// The created by.
     /// </value>
-    public string CreatedBy { get; set; }
+    public string? CreatedBy { get; set; }
 
     /// <summary>
     /// Gets or sets the date created.
@@ -46,7 +46,7 @@ public class User : IdentityUser
     /// <value>
     /// The deleted by.
     /// </value>
-    public string DeletedBy { get; set; }
+    public string? DeletedBy { get; set; }
 
     /// <summary>
     /// Gets or sets the date deleted.
@@ -61,7 +61,7 @@ public class User : IdentityUser
     /// <value>
     /// The Modified by.
     /// </value>
-    public string ModifiedBy { get; set; }
+    public string? ModifiedBy { get; set; }
 
     /// <summary>
     /// Gets or sets the date Modified.

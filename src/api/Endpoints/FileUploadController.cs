@@ -20,7 +20,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="fileUploadRequest">The file upload request.</param>
         /// <returns></returns>
-        [HttpPost("Upload")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(string))]
         public async Task<IActionResult> UploadAsync([FromForm] FileUploadRequest fileUploadRequest)
         {

@@ -17,7 +17,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="ItemTypeRequest">The create group request.</param>
         /// <returns></returns>
-        [HttpPost("create")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(CreateItemTypeResponse))]
         public async Task<IActionResult> AddItemTypeAsync([FromBody] CreateItemTypeRequest ItemTypeRequest)
         {
@@ -31,7 +31,7 @@ namespace Api.Endpoints
         /// Adds the Add ItemType asynchronous.
         /// </summary>
         /// <returns></returns>
-        [HttpGet("getall")]
+        [HttpGet]
         [ProducesDefaultResponseType(typeof(GetAllItemTypeResponse))]
         public async Task<IActionResult> GetAllItemTypeAsync()
         {
@@ -60,7 +60,7 @@ namespace Api.Endpoints
         /// <param name="Id">The update ItemType request.</param>
         /// <returns></returns>
 
-        [HttpPost("update")]
+        [HttpPut]
         [ProducesDefaultResponseType(typeof(UpdateItemTypeResponse))]
         public async Task<IActionResult> UpdateItemTypeAsync([FromBody] UpdateItemTypeRequest ItemTypeRequest)
         {

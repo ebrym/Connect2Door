@@ -72,7 +72,7 @@ namespace Application.Features.AuthenticationFeatures.Commands
                 UserName = request.UserName,
                 PhoneNumber = request.Phone,
                 FullName = request.FullName,
-                CreatedBy = currentUser;// ?? "System",
+                CreatedBy = currentUser ?? "System",
                 DateCreated = DateTime.Now
             };
             var userCreated = await userManager.CreateAsync(user, request.Password);

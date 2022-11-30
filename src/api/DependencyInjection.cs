@@ -18,6 +18,7 @@ using System;
 using System.Linq;
 using Api.Seed.Data;
 using Api.Seed.Interface;
+using OpenIddict.Server.AspNetCore;
 using OpenIddict.Validation.AspNetCore;
 using Persistence;
 
@@ -62,31 +63,32 @@ namespace Api
                 options.ClaimsIdentity.UserIdClaimType = OpenIdConnectConstants.Claims.Subject;
                 options.ClaimsIdentity.RoleClaimType = OpenIdConnectConstants.Claims.Role;
             });
+            services.AddAuthentication(options =>
+            {
 
+                options.DefaultScheme = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme;   
+                //options.DefaultAuthenticateScheme = OpenIddictServerAspNetCoreDefaults.AuthenticationScheme;
+                //OpenIddict.Server.AspNetCore.OpenIddictServerAspNetCoreDefaults
+                // options.DefaultAuthenticateScheme = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme;
+                
+            });
             services.Configure<OpenIdConnectServerOptions>(opt =>
             {
                 opt.AllowInsecureHttp = true;
             });
-            services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme;
-                
-            });
-
             services.AddOpenIddict()
                 .AddCore(options =>
                 {
                     options.UseEntityFrameworkCore()
                         .UseDbContext<ApplicationDbContext>();
                 })
-
                 .AddServer(options =>
                 {
                     options.SetAuthorizationEndpointUris("/connect/authorize")
                         .SetIntrospectionEndpointUris("/connect/introspect")
                         .SetTokenEndpointUris("/connect/token");
-
+                    
                     options.AllowPasswordFlow();
                     options.AllowAuthorizationCodeFlow();
                     options.AllowImplicitFlow();
@@ -103,8 +105,19 @@ namespace Api
                     //    options.AddSigningCertificate(new X509Certificate2(file, password));
                     //    else
                     //options.AddDevelopmentSigningCertificate();
+                    options
+                        .AddDevelopmentEncryptionCertificate()
+                        .AddDevelopmentSigningCertificate();
+                    
+                    options.RegisterClaims();
+                    
                     options.AddEphemeralEncryptionKey()
                         .AddEphemeralSigningKey();
+
+                    options.UseAspNetCore()
+                        .EnableTokenEndpointPassthrough()
+                        // Gateways call with http
+                        .DisableTransportSecurityRequirement();
                 }).AddValidation(options =>
                 {
                     // Import the configuration from the local OpenIddict server instance.
@@ -116,9 +129,11 @@ namespace Api
                     // Enable authorization entry validation, which is required to be able
                     // to reject access tokens retrieved from a revoked authorization code.
                     options.EnableAuthorizationEntryValidation();
+                    options.EnableTokenEntryValidation();
                 });
+           
             services.AddScoped<ISeeder, SeedData>();
-            services.AddHostedService<Worker>();
+            //services.AddHostedService<Worker>();
             services.AddHostedService<NotificationWorkerService>();
         }
 

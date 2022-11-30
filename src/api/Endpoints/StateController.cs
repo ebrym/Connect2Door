@@ -16,7 +16,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="stateRequest"></param>
         /// <returns></returns>
-        [HttpPost("create")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(CreateStateResponse))]
         public async Task<IActionResult> AddStateAsync([FromBody] CreateStateRequest stateRequest)
         {
@@ -31,7 +31,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="stateRequest"></param>
         /// <returns></returns>
-        [HttpGet("delete/{id}")]
+        [HttpDelete("{id}")]
         [ProducesDefaultResponseType(typeof(DeleteStateResponse))]
         public async Task<IActionResult> DeleteStateAsync(string id)
         {
@@ -48,7 +48,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="stateRequest"></param>
         /// <returns></returns>
-        [HttpGet("get")]
+        [HttpGet]
         [ProducesDefaultResponseType(typeof(GetAllStateResponse))]
         public async Task<IActionResult> GetAllStateAsync()
         {
@@ -75,7 +75,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="stateRequest"></param>
         /// <returns></returns>
-        [HttpPost("update")]
+        [HttpPut]
         [ProducesDefaultResponseType(typeof(UpdateStateResponse))]
         public async Task<IActionResult> UpdateStateAsync([FromBody] UpdateStateRequest stateRequest)
         {

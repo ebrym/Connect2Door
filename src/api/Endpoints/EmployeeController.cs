@@ -19,7 +19,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="employeeRequest">The create group request.</param>
         /// <returns></returns>
-        [HttpPost("create")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(CreateEmployeeResponse))]
         public async Task<IActionResult> AddEmployeeAsync([FromBody] CreateEmployeeRequest employeeRequest)
         {
@@ -34,7 +34,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("delete/{id}")]
+        [HttpDelete("{id}")]
         [ProducesDefaultResponseType(typeof(DeleteEmployeeResponse))]
         public async Task<IActionResult> DeleteEmployeeAsync(string id)
         {
@@ -53,7 +53,7 @@ namespace Api.Endpoints
         /// Adds the Add Group asynchronous.
         /// </summary>
         /// <returns></returns>
-        [HttpGet("getall")]
+        [HttpGet]
         [ProducesDefaultResponseType(typeof(GetAllEmployeeResponse))]
         public async Task<IActionResult> GetAllEmployeeAsync()
         {
@@ -82,7 +82,7 @@ namespace Api.Endpoints
         /// <param name="Id">The update employee request.</param>
         /// <returns></returns>
 
-        [HttpPost("update")]
+        [HttpPut]
         [ProducesDefaultResponseType(typeof(UpdateEmployeeResponse))]
         public async Task<IActionResult> UpdateEmployeeAsync([FromBody] UpdateEmployeeRequest employeeRequest)
         {

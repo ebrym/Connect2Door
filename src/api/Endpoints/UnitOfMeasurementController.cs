@@ -16,7 +16,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="unitOfMeasurementRequest"></param>
         /// <returns></returns>
-        [HttpPost("create")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(CreateUnitOfMeasurementResponse))]
         public async Task<IActionResult> AddUnitOfMeasurementAsync([FromBody] CreateUnitOfMeasurementRequest unitOfMeasurementRequest)
         {
@@ -31,7 +31,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="unitOfMeasurementRequest"></param>
         /// <returns></returns>
-        [HttpGet("delete/{id}")]
+        [HttpGet("{id}")]
         [ProducesDefaultResponseType(typeof(DeleteUnitOfMeasurementResponse))]
         public async Task<IActionResult> DeleteUnitOfMeasurementAsync(string id)
         {
@@ -48,7 +48,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="unitOfMeasurementRequest"></param>
         /// <returns></returns>
-        [HttpGet("get")]
+        [HttpGet]
         [ProducesDefaultResponseType(typeof(GetAllUnitOfMeasurementResponse))]
         public async Task<IActionResult> GetAllUnitOfMeasurementAsync()
         {
@@ -75,7 +75,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="unitOfMeasurementRequest"></param>
         /// <returns></returns>
-        [HttpPost("update")]
+        [HttpPut]
         [ProducesDefaultResponseType(typeof(UpdateUnitOfMeasurementResponse))]
         public async Task<IActionResult> UpdateUnitOfMeasurementAsync([FromBody] UpdateUnitOfMeasurementRequest unitOfMeasurementRequest)
         {

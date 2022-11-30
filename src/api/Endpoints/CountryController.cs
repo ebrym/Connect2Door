@@ -16,7 +16,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="countryRequest"></param>
         /// <returns></returns>
-        [HttpPost("create")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(CreateCountryResponse))]
         public async Task<IActionResult> AddCountryAsync([FromBody] CreateCountryRequest countryRequest)
         {
@@ -31,7 +31,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="countryRequest"></param>
         /// <returns></returns>
-        [HttpGet("delete/{id}")]
+        [HttpDelete("{id}")]
         [ProducesDefaultResponseType(typeof(DeleteCountryResponse))]
         public async Task<IActionResult> DeleteCountryAsync(string id)
         {
@@ -48,7 +48,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="countryRequest"></param>
         /// <returns></returns>
-        [HttpGet("get")]
+        [HttpGet]
         [ProducesDefaultResponseType(typeof(GetAllCountryResponse))]
         public async Task<IActionResult> GetAllCountryAsync()
         {
@@ -75,7 +75,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="countryRequest"></param>
         /// <returns></returns>
-        [HttpPost("update")]
+        [HttpPut]
         [ProducesDefaultResponseType(typeof(UpdateCountryResponse))]
         public async Task<IActionResult> UpdateCountryAsync([FromBody] UpdateCountryRequest countryRequest)
         {

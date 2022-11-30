@@ -31,7 +31,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="countryRequest"></param>
         /// <returns></returns>
-        [HttpPost("create")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(CreateCompanyResponse))]
         public async Task<IActionResult> AddCompanyAsync([FromForm] CreateCompanyRequest countryRequest)
         {
@@ -46,7 +46,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="countryRequest"></param>
         /// <returns></returns>
-        [HttpGet("delete/{id}")]
+        [HttpDelete("{id}")]
         [ProducesDefaultResponseType(typeof(DeleteCompanyResponse))]
         public async Task<IActionResult> DeleteCompanyAsync(string id)
         {
@@ -63,7 +63,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="countryRequest"></param>
         /// <returns></returns>
-        [HttpGet("get")]
+        [HttpGet]
         [ProducesDefaultResponseType(typeof(GetAllCompanyResponse))]
         public async Task<IActionResult> GetAllCompanyAsync()
         {
@@ -90,7 +90,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="countryRequest"></param>
         /// <returns></returns>
-        [HttpPost("update")]
+        [HttpPut]
         [ProducesDefaultResponseType(typeof(UpdateCompanyResponse))]
         public async Task<IActionResult> UpdateCompanyAsync([FromBody] UpdateCompanyRequest countryRequest)
         {

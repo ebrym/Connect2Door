@@ -435,6 +435,81 @@
              <param name="cancellationToken"></param>
              <returns></returns>
         </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateCountryCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateCountryCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateCountryCommand.Handle(Application.Request.Country.CreateCountryRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.CreateCountryValidation">
+             <summary>
+            
+             </summary>
+             <seealso>
+                 <cref>FluentValidation.AbstractValidator{Application.Request.Unit.CreateUnitRequest}</cref>
+             </seealso>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.CreateCountryValidation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Application.Features.UnitFeatures.Commands.CreateCountryValidation"/> class.
+            </summary>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.DeleteCountryCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteCountryCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.DeleteCountryCommand.Handle(Application.Request.Country.DeleteCountryRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Commands.UpdateCountryCommand">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateCountryCommand.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+             <summary>
+            
+             </summary>
+             <param name="applicationDb"></param>
+             <param name="mapper"></param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Commands.UpdateCountryCommand.Handle(Application.Request.Country.UpdateCountryRequest,System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="request"></param>
+             <param name="cancellationToken"></param>
+             <returns></returns>
+        </member>
         <member name="T:Application.Features.UnitFeatures.Commands.CreateLocalGovernmentCommand">
              <summary>
             
@@ -544,6 +619,49 @@
             <param name="mapper">The mapper.</param>
         </member>
         <member name="M:Application.Features.UnitFeatures.Queries.GetCompanyByIdQuerry.Handle(Application.Request.Company.GetCompanyByIdRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetAllCountryQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllCountryQuery.#ctor(Application.Interfaces.IApplicationDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="!:GetAllUnitQuery"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetAllCountryQuery.Handle(Application.Request.Country.GetAllCountryRequest,System.Threading.CancellationToken)">
+            <summary>
+            Handles a request
+            </summary>
+            <param name="request">The request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>
+            Response from the request
+            </returns>
+        </member>
+        <member name="T:Application.Features.UnitFeatures.Queries.GetCountryByIdQuerry">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetCountryByIdQuerry.#ctor(Application.Interfaces.IApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Initializes a new instance of the <see cref="!:GetUnitByIdQuerry"/> class.
+            </summary>
+            <param name="applicationDbContext">The application database context.</param>
+            <param name="mapper">The mapper.</param>
+        </member>
+        <member name="M:Application.Features.UnitFeatures.Queries.GetCountryByIdQuerry.Handle(Application.Request.Country.GetCountryByIdRequest,System.Threading.CancellationToken)">
             <summary>
             Handles a request
             </summary>

@@ -16,7 +16,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="notificationReceiverRequest"> Creates a new NotificationReceiver</param>
         /// <returns></returns>
-        [HttpPost("create")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(CreateNotificationReceiverResponse))]
         public async Task<IActionResult> AddNotificationReceiverAsync([FromBody] CreateNotificationReceiverRequest notificationReceiverRequest)
         {
@@ -31,7 +31,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete("delete/{id}")]
+        [HttpDelete("{id}")]
         [ProducesDefaultResponseType(typeof(DeleteNotificationReceiverResponse))]
         public async Task<IActionResult> DeleteNotificationReceiverAsync(string id)
         {
@@ -78,7 +78,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="notificationReceiverRequest"> Updates the NotificationReceiver</param>
         /// <returns></returns>
-        [HttpPost("update")]
+        [HttpPut]
         [ProducesDefaultResponseType(typeof(UpdateNotificationReceiverResponse))]
         public async Task<IActionResult> UpdateMinistryAsync([FromBody] UpdateNotificationReceiverRequest notificationReceiverRequest)
         {

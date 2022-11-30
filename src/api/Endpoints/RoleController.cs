@@ -17,8 +17,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="roleRequest"></param>
         /// <returns></returns>
-        [AllowAnonymous]
-        [HttpPost("create")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(CreateRoleResponse))]
         public async Task<IActionResult> AddRoleAsync([FromBody] CreateRoleRequest roleRequest)
         {
@@ -33,7 +32,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="roleRequest"></param>
         /// <returns></returns>
-        [HttpPost("delete")]
+        [HttpDelete("{id}")]
         [ProducesDefaultResponseType(typeof(CreateRoleResponse))]
         public async Task<IActionResult> DeleteRoleAsync([FromBody] DeleteRoleRequest roleRequest)
         {
@@ -48,7 +47,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="roleRequest"></param>
         /// <returns></returns>
-        [HttpGet("get")]
+        [HttpGet]
         [ProducesDefaultResponseType(typeof(GetAllRoleResponse))]
         public async Task<IActionResult> GetAllRoleAsync()
         {
@@ -75,7 +74,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="roleRequest"></param>
         /// <returns></returns>
-        [HttpPost("update")]
+        [HttpPut]
         [ProducesDefaultResponseType(typeof(UpdateRoleResponse))]
         public async Task<IActionResult> UpdateRoleAsync([FromBody] UpdateRoleRequest roleRequest)
         {

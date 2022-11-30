@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using OpenIddict.Validation;
 using System.Linq;
+using OpenIddict.Server.AspNetCore;
 using OpenIddict.Validation.AspNetCore;
 
 namespace Api.Endpoints
@@ -11,7 +12,7 @@ namespace Api.Endpoints
     /// <summary>
     ///
     /// </summary>
-    [Authorize(AuthenticationSchemes = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme)]
+   [Authorize(AuthenticationSchemes = OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme)]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public abstract class BaseApiController : ControllerBase

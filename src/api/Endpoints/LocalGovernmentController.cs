@@ -16,7 +16,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="localGovernmentRequest"></param>
         /// <returns></returns>
-        [HttpPost("create")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(CreateLocalGovernmentResponse))]
         public async Task<IActionResult> AddLocalGovernmentAsync([FromBody] CreateLocalGovernmentRequest localGovernmentRequest)
         {
@@ -31,7 +31,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="localGovernmentRequest"></param>
         /// <returns></returns>
-        [HttpGet("delete/{id}")]
+        [HttpDelete("{id}")]
         [ProducesDefaultResponseType(typeof(DeleteLocalGovernmentResponse))]
         public async Task<IActionResult> DeleteLocalGovernmentAsync(string id)
         {
@@ -48,7 +48,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="localGovernmentRequest"></param>
         /// <returns></returns>
-        [HttpGet("get")]
+        [HttpGet]
         [ProducesDefaultResponseType(typeof(GetAllLocalGovernmentResponse))]
         public async Task<IActionResult> GetAllLocalGovernmentAsync()
         {
@@ -75,7 +75,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="localGovernmentRequest"></param>
         /// <returns></returns>
-        [HttpPost("update")]
+        [HttpPut]
         [ProducesDefaultResponseType(typeof(UpdateLocalGovernmentResponse))]
         public async Task<IActionResult> UpdateLocalGovernmentAsync([FromBody] UpdateLocalGovernmentRequest localGovernmentRequest)
         {

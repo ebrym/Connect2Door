@@ -16,7 +16,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="unitRequest"></param>
         /// <returns></returns>
-        [HttpPost("create")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(CreateUnitResponse))]
         public async Task<IActionResult> AddUnitAsync([FromBody] CreateUnitRequest unitRequest)
         {
@@ -31,7 +31,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="unitRequest"></param>
         /// <returns></returns>
-        [HttpGet("delete/{id}")]
+        [HttpDelete("{id}")]
         [ProducesDefaultResponseType(typeof(DeleteUnitResponse))]
         public async Task<IActionResult> DeleteUnitAsync(string id)
         {
@@ -48,7 +48,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="unitRequest"></param>
         /// <returns></returns>
-        [HttpGet("get")]
+        [HttpGet]
         [ProducesDefaultResponseType(typeof(GetAllUnitResponse))]
         public async Task<IActionResult> GetAllUnitAsync()
         {
@@ -75,7 +75,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="unitRequest"></param>
         /// <returns></returns>
-        [HttpPost("update")]
+        [HttpPut]
         [ProducesDefaultResponseType(typeof(UpdateUnitResponse))]
         public async Task<IActionResult> UpdateUnitAsync([FromBody] UpdateUnitRequest unitRequest)
         {

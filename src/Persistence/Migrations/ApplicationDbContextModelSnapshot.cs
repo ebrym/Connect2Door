@@ -869,14 +869,12 @@ namespace Persistence.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("DeletedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("ModifiedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -910,7 +908,6 @@ namespace Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset>("DateCreated")
@@ -923,7 +920,6 @@ namespace Persistence.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("DeletedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -947,7 +943,6 @@ namespace Persistence.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("ModifiedBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")

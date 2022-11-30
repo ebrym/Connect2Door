@@ -19,7 +19,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="serviceTypeRequest">The create group request.</param>
         /// <returns></returns>
-        [HttpPost("create")]
+        [HttpPost]
         [ProducesDefaultResponseType(typeof(CreateServiceTypeResponse))]
         public async Task<IActionResult> AddserviceTypeAsync([FromBody] CreateServiceTypeRequest serviceTypeRequest)
         {
@@ -33,7 +33,7 @@ namespace Api.Endpoints
         /// Adds the Add serviceType asynchronous.
         /// </summary>
         /// <returns></returns>
-        [HttpGet("getall")]
+        [HttpGet]
         [ProducesDefaultResponseType(typeof(GetAllServiceTypeResponse))]
         public async Task<IActionResult> GetAllserviceTypeAsync()
         {
@@ -62,7 +62,7 @@ namespace Api.Endpoints
         /// <param name="Id">The update serviceType request.</param>
         /// <returns></returns>
 
-        [HttpPost("update")]
+        [HttpPut]
         [ProducesDefaultResponseType(typeof(UpdateServiceTypeResponse))]
         public async Task<IActionResult> UpdateserviceTypeAsync([FromBody] UpdateServiceTypeRequest serviceTypeRequest)
         {
@@ -77,7 +77,7 @@ namespace Api.Endpoints
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns></returns>
-        [HttpGet("delete/{id}")]
+        [HttpDelete("{id}")]
         [ProducesDefaultResponseType(typeof(string))]
         public async Task<IActionResult> DeleteServiceTypeAsync(string id)
         {
